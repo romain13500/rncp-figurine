@@ -39,13 +39,13 @@ if(empty($_GET['page'])){
                 $LoginController->displayLogin(); 
              }
 
-            //  elseif ($url[1] === "connexion") {
-            //     $LoginController->loginValidation();
-            // }
+             elseif ($url[1] === "connexion") {
+                $LoginController->loginValidation();
+            }
 
-            // elseif ($url[1] === "logout") {
-            //     $LoginController->logoutValidation();
-            // }
+            elseif ($url[1] === "logout") {
+                $LoginController->logoutValidation();
+            }
             break;
 
 

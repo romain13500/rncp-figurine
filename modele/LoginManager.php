@@ -82,4 +82,17 @@ class LoginManager extends Manager{
                    
         } 
     }
+
+    public function logoutControl(){
+        
+        session_start();
+        $_SESSION = array();
+        session_destroy();
+            ?>
+                <script type="text/javascript">
+                        alert('Vous etes déconnecté(e)'); 
+                        location.href = "<?=URL?>accueil";
+                </script>
+    <?php        
+    }
 }
