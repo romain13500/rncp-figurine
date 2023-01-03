@@ -12,6 +12,11 @@ class FigurineController {
         $this->figurineManager->loadFigurine();
     }
 
+    public function displayFigurineAdmin() {
+        $figurines = $this->figurineManager->getFigurines();
+        require_once "view/admin.figurine.view.php";
+    }
+
 
     
 }
