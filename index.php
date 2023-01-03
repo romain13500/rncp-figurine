@@ -3,7 +3,14 @@
 define("URL" , str_replace("index.php","",(isset($_SERVER['HTTPS']) ? "https" : "http") . 
 "://".$_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] ));
 
-require_once "controller/inscription.controller.php";
+require_once "controller/UserController.php";
+$userController = new UserController;
+
+require_once "controller/LoginController.php";
+$LoginController = new LoginController;
+
+
+
 
 
 
@@ -27,18 +34,18 @@ if(empty($_GET['page'])){
 
 
         case 'login':
-            
+
             if (empty($url[1])){
-                $loginController->displayLogin(); 
+                $LoginController->displayLogin(); 
              }
 
-             elseif ($url[1] === "connexion") {
-                $loginController->loginValidation();
-            }
+            //  elseif ($url[1] === "connexion") {
+            //     $LoginController->loginValidation();
+            // }
 
-            elseif ($url[1] === "logout") {
-                $loginController->logoutValidation();
-            }
+            // elseif ($url[1] === "logout") {
+            //     $LoginController->logoutValidation();
+            // }
             break;
 
 
