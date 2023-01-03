@@ -61,16 +61,16 @@
 
  // --------------- SI SESSION USERNAME EST VIDE ALORS AFFICHE LE BOUTON DE CONNEXION
             if(empty($_SESSION['username'])){
-            //     ?>
-                 <ul>
-                 <li class="nav-item dropstart">
-                   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa-regular fa-circle-user fa-2x hover-zoom" style="color:silver"></i></a>
-                   <div class="dropdown-menu">
-                 <p class ="fw-bold text-warning m-auto text-center"><a href="<?= URL ?>login"> Connectez vous </a></p>
-                 </div>
-                 </li>
-               </ul>
-            //     <?php 
+                ?>
+                <ul>
+                <li class="nav-item dropstart">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa-regular fa-circle-user fa-2x hover-zoom" style="color:silver"></i></a>
+                  <div class="dropdown-menu">
+                <p class ="fw-bold text-warning m-auto text-center"><a href="<?= URL ?>login"> Connectez vous </a></p>
+                </div>
+                </li>
+              </ul>
+                <?php 
             } 
 // --------------- SINON AFFICHE LE BOUTON DE DECONNEXION
             elseif (!empty($_SESSION['username'])) {

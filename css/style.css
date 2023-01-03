@@ -1,0 +1,24 @@
+#title{
+    font-family: 'Passero One', cursive !important;
+}
+
+#navlink:hover{
+    color: #ee8132 !important;
+} 
+
+.container .carousel-item .card{
+    box-shadow: #ee8132 !important;
+}
+
+ul{
+    list-style: none !important;
+}
+
+label {
+    display: block !important;
+    margin-top: 1em !important;
+}
+
+input:invalid {
+    background-color: lightpink !important;
+}
