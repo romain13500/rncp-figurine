@@ -23,7 +23,7 @@ class LoginManager extends Manager{
          $req->closeCursor();
 
             foreach($myUsers as $user){
-                $u = new User($user["id"], $user["email"], $user["username"], $user["MdP"]);
+                $u = new User($user["id"], $user["email"], $user["username"], $user["MdP"], $user["role"]);
                 $this->addUser($u);
             }
     }
@@ -33,14 +33,29 @@ class LoginManager extends Manager{
             $recupUser = $this->getBdd()->prepare('SELECT * FROM users WHERE email = ? && username = ? && MdP = ?');
             $email = htmlspecialchars($_POST['email']);
             $username = htmlspecialchars($_POST['username']);
-            $MdP = htmlspecialchars($_POST['MdP']);
-           
+            $MdP = htmlspecialchars($_POST['MdP']);      
             $recupUser->execute(array($email, $username, $MdP));
+
+
+            if($recupUser->rowcount() > 0) {
+
+                session_start();
+                $_SESSION['email'] = $email;
+                $_SESSION['username'] = $username;
+                $_SESSION['role'] = $role;
+                ?>
+                    <script type="text/javascript">
+                        alert('Vous etes connecté(e)<?= $_SESSION['username'] ?>');
+                        location.href = "<?=URL?>accueil";
+                    </script>
+                <?php                  
+            }
 
             if($recupUser->rowcount() > 0) {
                 session_start();
                 $_SESSION['email'] = $email;
                 $_SESSION['username'] = $username;
+                $_SESSION['role'] = $role;
                 ?>
                     <script type="text/javascript">
                         alert('Vous etes connecté(e)<?= $_SESSION['username'] ?>');

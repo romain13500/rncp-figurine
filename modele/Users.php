@@ -14,11 +14,12 @@ class User{
 
     // ------ method magique construct --------
     
-    public function __construct($id, $email, $username, $MdP){
+    public function __construct($id, $email, $username, $MdP, $role){
         $this->id = $id;
         $this->email = $email;
         $this->username = $username;
         $this->MdP = $MdP;
+        $this->role = $role;
         
     }
 
