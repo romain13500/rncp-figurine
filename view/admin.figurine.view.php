@@ -45,8 +45,7 @@ ob_start()
 </table>
 
 <a href="<?= URL ?>figurineadmin/add" class="btn btn-primary w-25 d-block m-auto mt-3 rounded"> 
-    Ajouter un jeux 
-  <br><i class="fa-solid fa-gamepad fa-2x"></i>
+    Ajouter une Figurine 
 </a>
 </section>
 

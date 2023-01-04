@@ -52,7 +52,8 @@ if(empty($_GET['page'])){
             break;
 
 
-     // ********************************************************************************************************************
+     
+            // ********************************************************************************************************************
      // *************************** INSCRIPTION ************************************************************************
      // ******************************************************************************************************************** 
             
@@ -85,6 +86,15 @@ if(empty($_GET['page'])){
             }
             elseif ($url[1] === "validation") {
                 $FigurineController->NewFigurineValidation();
+            }
+            elseif ($url[1] === "edit") {
+                $FigurineController->editFigurineForm($url[2]);
+            }
+            elseif ($url[1] === "editvalidation") {
+                $FigurineController->editFigurineValidation();
+            }
+            elseif ($url[1] === "delete") {
+                $FigurineController->deleteFigurine($url[2]);
             }
             break;
 

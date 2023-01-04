@@ -37,7 +37,7 @@ class UserController {
                 //----- VALIDATION DU FORM -----
 
             public function newUserValidation() {  
-                $this->userManager->newUserDB( $_POST['email'], $_POST['username'], $_POST['MdP']); 
+                $this->userManager->newUserDB( $_POST['email'], $_POST['username'], $_POST['MdP'],); 
                 $errors = array();
 
                 if(empty($_POST['email'])){

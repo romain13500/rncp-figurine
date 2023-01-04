@@ -83,7 +83,7 @@
                     <hr>
                     <?php
 // --------------- SI SESSION USERNAME EST EGAL A ADMIN ALORS AFFICHE LA SECTION ADMIN  
-                    if(!empty($_SESSION['username']) && $_SESSION['username'] == 'WebAdmin'){ ?>
+                    if($_SESSION['username'] == 'admin'){ ?>
                       <a class="dropdown-item text-center" href="<?= URL ?>admin">Admin</a>
                       <hr>
                     <?php
@@ -97,9 +97,6 @@
                 <?php
                   }
                 ?>
-
-              
-          
       </div>
     </nav>
   </header>
@@ -125,10 +122,10 @@
 </main>
 
 <footer>
-<section class="bg-primary p-5  fixed text-white text-center mt-5  w-100">
+  <section class="bg-primary p-5  fixed text-white text-center mt-5  w-100">
     <p class="font-weight-bold ">Heroes Collector</p>
 
-    <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center">
         <i class="fab fa-github fa-2x mx-3"></i>
         <i class="fab fa-linkedin fa-2x mx-3"></i>
         <i class="fab fa-youtube fa-2x mx-3"></i>
@@ -137,8 +134,8 @@
         <i class="fab fa-twitter fa-2x mx-3"></i>
         <i class="fab fa-facebook fa-2x mx-3"></i>
         <i class="fab fa-whatsapp fa-2x mx-3"></i>
-    </div>
-</section>
+      </div>
+  </section>
 </footer>
     
 

@@ -23,22 +23,23 @@
 <fieldset class="form-group">
       <legend class="mt-5 mb-5">Manga</legend>
       <div class="d-flex flex-wrap justify-content-between my-5">
+
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="dragonball" name="dragonball">
+        <input class="form-check-input" type="checkbox" value="1" id="manga" name="manga">
         <label class="form-check-label" for="dragonball">
           Dragon Ball
         </label>
       </div>
 
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="onepiece" name="onepiece">
+        <input class="form-check-input" type="checkbox" value="2" id="manga" name="manga">
         <label class="form-check-label" for="onepiece">
           One Piece
         </label>
       </div>
 
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="naruto" name="naruto">
+        <input class="form-check-input" type="checkbox" value="3" id="manga" name="manga">
         <label class="form-check-label" for="naruto">
           Naruto
         </label>

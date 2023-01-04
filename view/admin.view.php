@@ -8,39 +8,6 @@ ob_start()
     <div class="d-flex flex-wrap justify-content-around">
 
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <hr>
-            <div class="card-body">                  
-                <p class="card-text">Gestion Dragon Ball</p>
-                <a href="<?= URL ?>dragonballadmin" class="btn btn-primary">Setting</a>
-            </div>
-        </div>
-
-
-
-
-        <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <hr>
-        <div class="card-body">
-            <p class="card-text">Gestion Naruto</p>
-            <a href="<?= URL ?>narutoadmin" class="btn btn-primary">Setting</a>
-        </div>
-        </div>
-
-
-
-
-        <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <hr>
-        <div class="card-body">
-            <p class="card-text">Gestion One Piece</p>
-            <a href="<?= URL ?>onepieceadmin" class="btn btn-primary">Setting</a>
-        </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
         <hr>
         <div class="card-body">
@@ -48,6 +15,16 @@ ob_start()
             <a href="<?= URL ?>useradmin" class="btn btn-primary">Setting</a>
         </div>
         </div>
+
+        <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <hr>
+        <div class="card-body">
+            <p class="card-text">Gestion Figurine</p>
+            <a href="<?= URL ?>figurineadmin" class="btn btn-primary">Setting</a>
+        </div>
+        </div>
+
     </div>
 </div>
 

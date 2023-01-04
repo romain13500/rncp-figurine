@@ -32,10 +32,7 @@ class FigurineManager extends Manager {
 
     public function newFigurineDB($image, $name, $price, $manga) {
 
-        $manga = $this->getBdd()->prepare("SELECT * FROM theme");
-        $manga->execute();
-        $manga = $manga->fetchAll(PDO::FETCH_ASSOC);
-
+        
 
         $req = "INSERT INTO figurine (image, name, price, manga) VALUES (:image, :name, :price, :manga)";
         $statement = $this->getBdd()->prepare($req);
@@ -94,7 +91,7 @@ class FigurineManager extends Manager {
     // ***************************** SUPPRIMER FIGURINE ***********************************************************************
     // ***********************************************************************************************************************
 
-    public function deleteFigurine($id) {
+    public function deleteFigurineDB($id) {
         $req = "DELETE FROM figurine WHERE id = :id";
         $statement = $this->getBdd()->prepare($req);
         $statement->bindValue(":id", $id, PDO::PARAM_INT);

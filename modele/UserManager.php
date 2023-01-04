@@ -18,23 +18,20 @@ class UserManager extends Manager{
     // -------------------------------------------------------------------------------------------------------------------------------------
     // ------------------------------------ AJOUT D'UN USER -----------------------------------------------------------------------------
 
-        public function newUserDB( $email, $username, $MdP){
+        public function newUserDB( $email, $username, $MdP, ){
 
-           
-                // ------- FIN VERIFICATION DES CHAMPS --------
-
-            $req = " INSERT INTO users ( email, username, MdP, role_user) VALUES ( :email, :username, :MdP, :role_user) ";
+            $req = " INSERT INTO users ( email, username, MdP, role) VALUES ( :email, :username, :MdP, :role) ";
                 // $MdP = password_hash($MdP, PASSWORD_DEFAULT);
             $statement = $this->getBdd()->prepare($req);
             $statement->bindValue(":email", $email, PDO::PARAM_STR);
             $statement->bindValue(":username", $username, PDO::PARAM_STR);
             $statement->bindValue(":MdP", $MdP, PDO::PARAM_STR);
-            $statement->bindValue(":role_user", 2, PDO::PARAM_INT);
+            $statement->bindValue(":role",'user', PDO::PARAM_STR);
             $result = $statement->execute();
             $statement->closeCursor();
 
             if($result){
-                $user = new User($this->getBdd()->lastInsertId(),  $email, $username, $MdP);
+                $user = new User($this->getBdd()->lastInsertId(),  $email, $username, $MdP,);
                 $this->addUser($user);
                 ?>
                         <script type="text/javascript">
@@ -60,7 +57,7 @@ class UserManager extends Manager{
                 // ---- BOUCLE POUR RECUPERER LES DONNEES DE LA TABLE "USERS" ET LES STOCKER DANS LA CLASS USER
                 
             foreach ($myUsers as $user) {
-                $u = new User($user["id"], $user["email"], $user["username"], $user["MdP"]);
+                $u = new User($user["id"], $user["email"], $user["username"], $user["MdP"], $user["role"]);
                 $this->addUser($u); // ----STOCK DANS PRIVATE $USERS, $MYUSERS QUI PROVIENT DE LA BDD
             }
         }
@@ -88,6 +85,7 @@ class UserManager extends Manager{
             $statement->bindValue(":email", $email, PDO::PARAM_STR);
             $statement->bindValue(":username", $username, PDO::PARAM_STR);
             $statement->bindValue(":MdP", $MdP, PDO::PARAM_STR);
+            $statement->bindValue(":role", $role, PDO::PARAM_STR);
             $result = $statement->execute();
             $statement->closeCursor();
             
