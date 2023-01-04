@@ -104,6 +104,9 @@ if(empty($_GET['page'])){
                 elseif ($url[1] === "editvalidation") {
                     $userController->editUserValidation();
                 }
+                elseif ($url[1] === "delete") {
+                    $userController->deleteUser($url[2]);
+                }
                 break;
   
       

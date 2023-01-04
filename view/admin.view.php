@@ -48,16 +48,6 @@ ob_start()
             <a href="<?= URL ?>useradmin" class="btn btn-primary">Setting</a>
         </div>
         </div>
-
-        <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <hr>
-        <div class="card-body">
-            <p class="card-text">Gestion Figurine</p>
-            <a href="<?= URL ?>figurineadmin" class="btn btn-primary">Setting</a>
-        </div>
-        </div>
-
     </div>
 </div>
 
