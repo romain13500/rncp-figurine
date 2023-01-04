@@ -24,7 +24,14 @@ class FigurineController {
 
     public function NewFigurineValidation() {
         $this->figurineManager->newFigurineDB($_POST['image'], $_POST['name'], $_POST['price'], $_POST['manga']);
-        header('location' . URL . 'figurineadmin');
+        ?>
+            <script type="text/javascript">
+                            alert('ajout reussi');
+                            location.href = "<?=URL?>figurineadmin";
+            </script>
+        <?php
+
+
     }
 
     public function deleteFigurine($id) {

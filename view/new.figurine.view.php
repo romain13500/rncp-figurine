@@ -25,22 +25,22 @@
       <div class="d-flex flex-wrap justify-content-between my-5">
 
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="1" id="manga" name="manga">
-        <label class="form-check-label" for="dragonball">
+        <input class="form-check-input" type="checkbox" value="1" id="dragonball" name="manga">
+        <label class="form-check-label" for="manga">
           Dragon Ball
         </label>
       </div>
 
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="2" id="manga" name="manga">
-        <label class="form-check-label" for="onepiece">
+        <input class="form-check-input" type="checkbox" value="2" id="onepiece" name="manga">
+        <label class="form-check-label" for="manga">
           One Piece
         </label>
       </div>
 
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="3" id="manga" name="manga">
-        <label class="form-check-label" for="naruto">
+        <input class="form-check-input" type="checkbox" value="3" id="naruto" name="manga">
+        <label class="form-check-label" for="manga">
           Naruto
         </label>
     </div>
