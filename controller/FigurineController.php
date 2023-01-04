@@ -21,5 +21,10 @@ class FigurineController {
         require_once "view/new.figurine.view.php";
     }
 
+    public function NewFigurineValidation() {
+        $this->figurineManager->newFigurineDB($_POST['image'], $_POST['name'], $_POST['price'], $_POST['manga']);
+        header('location' . URL . 'figurineadmin');
+    }
+
     
 }

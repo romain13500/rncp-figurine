@@ -83,6 +83,9 @@ if(empty($_GET['page'])){
             elseif ($url[1] === "add") {
                 $FigurineController->NewFigurineForm();
             }
+            elseif ($url[1] === "validation") {
+                $FigurineController->NewFigurineValidation();
+            }
             break;
   
       
