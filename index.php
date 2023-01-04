@@ -80,6 +80,9 @@ if(empty($_GET['page'])){
             if(empty($url[1])){; 
                 $FigurineController->displayFigurineAdmin(); // SI RIEN APRES GAMES ALORS PAGE GAMES
             } 
+            elseif ($url[1] === "add") {
+                $FigurineController->NewFigurineForm();
+            }
             break;
   
       

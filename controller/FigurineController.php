@@ -17,6 +17,9 @@ class FigurineController {
         require_once "view/admin.figurine.view.php";
     }
 
+    public function NewFigurineForm() {
+        require_once "view/new.figurine.view.php";
+    }
 
     
 }

@@ -5,7 +5,7 @@
 
         <!-----  DEBUT FORMULAIRE EDIT GAME ----->
 
-<form  method="POST" action="<?= URL ?>dragonballadmin/editvalid">
+<form  method="POST" action="<?= URL ?>figurineadmin/editvalid">
 
 <!----- input recuperant le titre du jeu dans bdd  ----->
 <div class="form-group">    

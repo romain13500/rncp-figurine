@@ -25,12 +25,12 @@ ob_start()
         <td><?= $figurine->getName() ?></td>
         <td><?= $figurine->getPrice() ?></td>
         <td>
-         <form action="<?= URL ?>dragonballadmin/edit/<?= $figurine->getId() ?>" method="POST" onSubmit=" return confirm('Voulez vous modifier le jeu ?')">
+         <form action="<?= URL ?>figurineadmin/edit/<?= $figurine->getId() ?>" method="POST" onSubmit=" return confirm('Voulez vous modifier le jeu ?')">
             <button class="btn" type="submit"><i class="fa-solid fa-edit"></i></button> <!-- colspan 2 pour 2 icone dans la colone -->
           </form>
         </td>  
         <td>
-        <form action="<?= URL ?>dragonballadmin/delete/<?= $figurine->getId() ?>" method="POST"
+        <form action="<?= URL ?>figurineadmin/delete/<?= $figurine->getId() ?>" method="POST"
               onSubmit=" return confirm('Voulez vous supprimer la figurine ?')">
           <button class="btn" type="submit"><i class="fa-solid fa-trash"></i></button>
         </form>
@@ -44,7 +44,7 @@ ob_start()
   </tbody>
 </table>
 
-<a href="<?= URL ?>dragonballadmin/add" class="btn btn-primary w-25 d-block m-auto mt-3 rounded"> 
+<a href="<?= URL ?>figurineadmin/add" class="btn btn-primary w-25 d-block m-auto mt-3 rounded"> 
     Ajouter un jeux 
   <br><i class="fa-solid fa-gamepad fa-2x"></i>
 </a>
