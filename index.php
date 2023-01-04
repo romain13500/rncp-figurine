@@ -87,6 +87,24 @@ if(empty($_GET['page'])){
                 $FigurineController->NewFigurineValidation();
             }
             break;
+
+            case 'useradmin' :
+                if(empty($url[1])){; 
+                    $userController->displayUserAdmin(); // SI RIEN APRES GAMES ALORS PAGE GAMES
+                } 
+                elseif ($url[1] === "add") {
+                    $userController->NewUserForm();
+                }
+                elseif ($url[1] === "validation") {
+                    $userController->NewUserValidation();
+                }
+                elseif ($url[1] === "edit") {
+                    $userController->editUserForm($url[2]);
+                }
+                elseif ($url[1] === "editvalidation") {
+                    $userController->editUserValidation();
+                }
+                break;
   
       
 

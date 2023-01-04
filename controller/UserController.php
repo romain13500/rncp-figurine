@@ -29,7 +29,7 @@ class UserController {
 
             public function displayUserAdmin() {
                 $users = $this->userManager->getUsers();
-                require_once "view/user.admin.view.php";
+                require_once "view/admin.user.view.php";
             }
 
 // -------------------------------------------------------------------------------------------------------------------------------------
@@ -48,7 +48,7 @@ class UserController {
 
 public function editUserForm($id) {  
     $user = $this->userManager->getUserById($id);
-     require_once "view/edit.users.view.php";
+     require_once "view/edit.user.view.php";
 }
 
 // -------------------------------------------------------------------------------------------------------------------------------------
