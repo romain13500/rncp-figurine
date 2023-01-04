@@ -20,59 +20,7 @@ class UserManager extends Manager{
 
         public function newUserDB( $email, $username, $MdP){
 
-                // ------ VERIFICATION DES CHAMPS --------
-
-            $errors = array();
-
-            if(empty($_POST['email'])){
-                $errors['empty'] = "Veuillez entrer une adresse email";
-                ?>
-                            <script type="text/javascript">
-                                alert('<?= $errors['empty'] ?>');
-                                location.href = "<?=URL?>inscription";
-                            </script>
-                        <?php 
-            }
-            elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-                $errors ['email'] = "Votre adresse email n'est pas valide";
-                ?>
-                        <script type="text/javascript">
-                            alert('<?= $errors['email'] ?>');
-                            location.href = "<?=URL?>inscription";
-                        </script>
-                <?php 
-            }
-
-            elseif(empty($_POST['username'])){
-                $errors['email'] = "Veuillez entrer un pseudo";
-                    ?>
-                        <script type="text/javascript">
-                            alert('<?= $errors['email'] ?>');
-                            location.href = "<?=URL?>inscription";
-                        </script>
-                    <?php 
-            }
-
-            elseif (!preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])) {
-                $errors ['username'] = "Votre pseudo n'est pas valide";
-                ?>
-                        <script type="text/javascript">
-                            alert('<?= $errors['username'] ?>');
-                            location.href = "<?=URL?>inscription";
-                        </script>
-                <?php
-            }
-
-            elseif (empty($_POST['MdP'])){
-                $errors['mdp'] = "Veuillez entrer un mot de passe";
-                ?>
-                        <script type="text/javascript">
-                            alert('<?= $errors['mdp'] ?>');
-                            location.href = "<?=URL?>inscription";
-                        </script>
-                <?php 
-            }
-
+           
                 // ------- FIN VERIFICATION DES CHAMPS --------
 
             $req = " INSERT INTO users ( email, username, MdP, role_user) VALUES ( :email, :username, :MdP, :role_user) ";
@@ -82,10 +30,9 @@ class UserManager extends Manager{
             $statement->bindValue(":username", $username, PDO::PARAM_STR);
             $statement->bindValue(":MdP", $MdP, PDO::PARAM_STR);
             $statement->bindValue(":role_user", 2, PDO::PARAM_INT);
-    
-    
             $result = $statement->execute();
             $statement->closeCursor();
+
             if($result){
                 $user = new User($this->getBdd()->lastInsertId(),  $email, $username, $MdP);
                 $this->addUser($user);
@@ -96,6 +43,8 @@ class UserManager extends Manager{
                         </script>
                     <?php   
             }
+
+
         }
 
     // -------------------------------------------------------------------------------------------------------------------------------------
