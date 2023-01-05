@@ -12,10 +12,29 @@ class FigurineController {
         $this->figurineManager->loadFigurine();
     }
 
+
+
     public function displayFigurineAdmin() {
         $figurines = $this->figurineManager->getFigurines();
         require_once "view/admin.figurine.view.php";
     }
+
+    public function displayFigurineDragonBall() {
+        $figurines = $this->figurineManager->getFigurines();
+        require_once "view/dragonball.view.php";
+    }
+
+    public function displayFigurineOnePiece() {
+        $figurines = $this->figurineManager->getFigurines();
+        require_once "view/onepiece.view.php";
+    }
+
+    public function displayFigurineNaruto() {
+        $figurines = $this->figurineManager->getFigurines();
+        require_once "view/naruto.view.php";
+    }
+
+
 
     public function NewFigurineForm() {
         

@@ -73,14 +73,14 @@ ob_start();
 
 <div class="container">
     <div>
-        <img class="w-75" src="image/onepiece/baniereonePiece.jpeg" alt="img">
+        <img class="w-75" src="./image/onepiece/maxresdefault.jpg" alt="img">
     </div>
     <p class="text-center"><a class="text-decoration-none text-warning" href="onepiece">One Piece</a></p>
 </div><br>
 
 <div class="container">
     <div>
-        <img class="w-75" src="image/naruto/banniereNaruto.jpeg" alt="img">
+        <img class="w-75" src="./image/naruto/universnaruto.jpg" alt="img">
     </div>
     <p class="text-center"><a class="text-decoration-none text-warning" href="naruto">Naruto </a></p>
 </div>

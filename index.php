@@ -30,7 +30,7 @@ if(empty($_GET['page'])){
     switch($url[0]){
         case 'accueil':
                 require_once "view/home.view.php";
-            break;
+        break;
 
      // ********************************************************************************************************************
      // *************************** LOGIN ET LOGOUT ************************************************************************
@@ -64,7 +64,7 @@ if(empty($_GET['page'])){
                 } elseif ($url[1] === "validation") {
                     $userController->NewUserValidation();
                 } 
-                break;
+            break;
 
         // ********************************************************************************************************************
         // *************************** ADMIN ************************************************************************
@@ -74,7 +74,7 @@ if(empty($_GET['page'])){
             if(empty($url[1])){; 
                 require_once "view/admin.view.php"; // SI RIEN APRES GAMES ALORS PAGE GAMES
             } 
-            break;
+        break;
 
 
         case 'figurineadmin':
@@ -96,7 +96,7 @@ if(empty($_GET['page'])){
             elseif ($url[1] === "delete") {
                 $FigurineController->deleteFigurine($url[2]);
             }
-            break;
+        break;
 
             case 'useradmin' :
                 if(empty($url[1])){; 
@@ -117,7 +117,24 @@ if(empty($_GET['page'])){
                 elseif ($url[1] === "delete") {
                     $userController->deleteUser($url[2]);
                 }
-                break;
+            break;
+
+            case 'dragonball' :
+                if(empty($url[1])){; 
+                    $FigurineController->displayFigurineDragonBall(); 
+                }
+            break;
+
+            case 'onepiece' :
+                if(empty($url[1])){; 
+                    $FigurineController->displayFigurineOnePiece();
+                }
+            break;
+
+            case 'naruto' :
+                if(empty($url[1])){; 
+                    $FigurineController->displayFigurineNaruto();
+                }
   
       
 
