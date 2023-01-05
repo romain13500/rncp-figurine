@@ -43,7 +43,7 @@ if(empty($_GET['page'])){
              }
 
              elseif ($url[1] === "connexion") {
-                $LoginController->loginValidation();
+                $LoginController->connectUserValidation();
             }
 
             elseif ($url[1] === "logout") {

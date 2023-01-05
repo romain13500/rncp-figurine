@@ -28,69 +28,64 @@ class LoginController {
  
 // ------------------------------------------ fonction validation login   ---------------------------------------------------------------------------------------
 
-// public function connectUserValidation(){
-//     $user = $this->userManager->getUserByEmail($_POST['email'], $_POST['password']);
-//     $_SESSION['firstName'] = $user->getFirstName();
-//     $_SESSION['lastName'] = $user->getLastName();
-//     $_SESSION['email'] = $user->getEmail();
-//     $_SESSION['password'] = $user->getPassword();
-//     $_SESSION['adress'] = $user->getAdress();
-//     $_SESSION['numberPhone'] = $user->getNumberPhone();
-//     $_SESSION['role'] = $user->getRole();
+public function connectUserValidation(){
+    $user = $this->loginManager->getUserByEmail($_POST['email'], $_POST['MdP']);
 
-//     header('Location: ' . URL . "accueil");
+    $errors = array();
 
-//     }
-    
-public function loginValidation() { 
-
-       
-        $logins = $this->loginManager->loginControl(); 
-        
-        $errors = array();
-
-        if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)   ){
-            $errors['empty'] = "Verifiez votre email";
-            ?>
-                    <script type="text/javascript">
-                        alert('<?= $errors['empty'] ?>');
-                        location.href = "<?=URL?>login";
-                     </script>
-            <?php 
-        }
-        elseif(empty($_POST['username'])|| !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])){
-            $errors['email'] = "Verifiez votre pseudo";
-            ?>
-                        <script type="text/javascript">
-                            alert('<?= $errors['email'] ?>');
-                            location.href = "<?=URL?>login";
-                        </script>
-                    <?php 
-        }
-       elseif (empty($_POST['MdP'])){
-            $errors['MdP'] = "Verifiez votre mot de passe";
-            ?>
-                        <script type="text/javascript">
-                            alert('<?= $errors['MdP'] ?>');
-                            location.href = "<?=URL?>login";
-                        </script>
-            <?php
-        
-                } 
+    if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)   ){
+        $errors['empty'] = "Verifiez votre email";
+        ?>
+                <script type="text/javascript">
+                    alert('<?= $errors['empty'] ?>');
+                    location.href = "<?=URL?>login";
+                 </script>
+        <?php 
     }
-        
+    elseif(empty($_POST['username'])|| !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])){
+        $errors['email'] = "Verifiez votre pseudo";
+        ?>
+                    <script type="text/javascript">
+                        alert('<?= $errors['email'] ?>');
+                        location.href = "<?=URL?>login";
+                    </script>
+                <?php 
+    }
+   elseif (empty($_POST['MdP'])){
+        $errors['MdP'] = "Verifiez votre mot de passe";
+        ?>
+                    <script type="text/javascript">
+                        alert('<?= $errors['MdP'] ?>');
+                        location.href = "<?=URL?>login";
+                    </script>
+        <?php
+    } 
+   
+        session_start();
+        $_SESSION['username'] = $user->getUsername();
+        $_SESSION['email'] = $user->getEmail();
+        $_SESSION['MdP'] = $user->getMdP();
+        $_SESSION['role'] = $user->getRole();
+  
+        ?>
+                    <script type="text/javascript">
+                        alert('Vous etes connecté(e)<?= $_SESSION['username'] ?>');
+                        location.href = "<?=URL?>accueil";
+                    </script>
+        <?php
 
+        header('Location: ' . URL . "accueil");
+
+    
+}
     
 
     public function logoutValidation() { 
         
         $logins = $this->loginManager->logoutControl();
        
-        
-
     }
 
-
-
 }
+
 ?>

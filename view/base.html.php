@@ -83,7 +83,7 @@
                     <hr>
                     <?php
 // --------------- SI SESSION USERNAME EST EGAL A ADMIN ALORS AFFICHE LA SECTION ADMIN  
-                    if(isset($_SESSION['username']) && ($_SESSION['username'] === 'admin')){ ?>
+                    if(isset($_SESSION['email']) && ($_SESSION['role'] === 'admin')){ ?>
                       <a class="dropdown-item text-center" href="<?= URL ?>admin">Admin</a>
                       <hr>
                     <?php

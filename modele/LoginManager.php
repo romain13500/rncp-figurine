@@ -28,13 +28,13 @@ class LoginManager extends Manager{
             }
     }
 
-    public function getUserByEmail($email, $password){
+    public function getUserByEmail($email, $MdP){
 
-        $this->loadUsers();
+        $this->loadUser();
 
-        foreach ($this->users as $value) {
-            if ($email == $value->getEmail() && $password == $value->getPassword()) {
-                return $value;
+        foreach ($this->users as $user) {
+            if ($email == $user->getEmail() && $MdP == $user->getMdP()) {
+                return $user;
             }
         }
     }
