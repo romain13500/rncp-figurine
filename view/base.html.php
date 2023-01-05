@@ -43,10 +43,10 @@
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorie</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="<?= URL ?>dragonball">Dragon Ball</a>
-                    <a class="dropdown-item" href="<?= URL ?>onepiece">One Piece</a>
-                    <a class="dropdown-item" href="<?= URL ?>naruto">Naruto</a>
+                  <div class="dropdown-menu bg-dark">
+                    <a class="dropdown-item text-warning" href="<?= URL ?>dragonball">Dragon Ball</a>
+                    <a class="dropdown-item text-warning" href="<?= URL ?>onepiece">One Piece</a>
+                    <a class="dropdown-item text-warning" href="<?= URL ?>naruto">Naruto</a>
                     
                   </div>
                 </li>
@@ -83,7 +83,7 @@
                     <hr>
                     <?php
 // --------------- SI SESSION USERNAME EST EGAL A ADMIN ALORS AFFICHE LA SECTION ADMIN  
-                    if($_SESSION['username'] == 'admin'){ ?>
+                    if(isset($_SESSION['username']) && ($_SESSION['username'] === 'admin')){ ?>
                       <a class="dropdown-item text-center" href="<?= URL ?>admin">Admin</a>
                       <hr>
                     <?php

@@ -2,13 +2,10 @@
     font-family: 'Passero One', cursive !important;
 }
 
-#navlink:hover{
+nav p:hover{
     color: #ee8132 !important;
+   
 } 
-
-.container .carousel-item .card{
-    box-shadow: #ee8132 !important;
-}
 
 ul{
     list-style: none !important;

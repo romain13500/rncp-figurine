@@ -29,6 +29,7 @@ class LoginController {
 
     public function loginValidation() { 
         $logins = $this->loginManager->loginControl(); 
+
         $errors = array();
 
         if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)   ){

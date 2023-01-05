@@ -28,28 +28,21 @@ class LoginManager extends Manager{
             }
     }
 
-    public function loginControl(){
+    public function getUserByEmail($email){
+        foreach($this->users as $user){
+            if($user->getEmail() == $email){
+                return $user;
+            }
+        }
+    }
 
-            $recupUser = $this->getBdd()->prepare('SELECT * FROM users WHERE email = ? && username = ? && MdP = ?');
+    public function loginControl(){
+            $recupUser = $this->getBdd()->prepare('SELECT * FROM users WHERE email = ? && username = ?');
             $email = htmlspecialchars($_POST['email']);
             $username = htmlspecialchars($_POST['username']);
-            $MdP = htmlspecialchars($_POST['MdP']);      
-            $recupUser->execute(array($email, $username, $MdP));
+            $MdP = htmlspecialchars($_POST['MdP']);     
+            $recupUser->execute(array($email, $username));
 
-
-            if($recupUser->rowcount() > 0) {
-
-                session_start();
-                $_SESSION['email'] = $email;
-                $_SESSION['username'] = $username;
-                $_SESSION['role'] = $role;
-                ?>
-                    <script type="text/javascript">
-                        alert('Vous etes connecté(e)<?= $_SESSION['username'] ?>');
-                        location.href = "<?=URL?>accueil";
-                    </script>
-                <?php                  
-            }
 
             if($recupUser->rowcount() > 0) {
                 session_start();
@@ -62,7 +55,7 @@ class LoginManager extends Manager{
                         location.href = "<?=URL?>accueil";
                     </script>
                 <?php                  
-            }  
+            } 
     }
 
     public function logoutControl(){
@@ -75,6 +68,6 @@ class LoginManager extends Manager{
                         alert('Vous etes déconnecté(e)'); 
                         location.href = "<?=URL?>accueil";
                 </script>
-    <?php        
+            <?php        
     }
 }
