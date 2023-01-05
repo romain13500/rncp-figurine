@@ -100,7 +100,7 @@ if(empty($_GET['page'])){
 
             case 'useradmin' :
                 if(empty($url[1])){; 
-                    $userController->displayUserAdmin(); // SI RIEN APRES GAMES ALORS PAGE GAMES
+                    $userController->displayUserAdmin(); 
                 } 
                 elseif ($url[1] === "add") {
                     $userController->NewUserForm();
@@ -119,6 +119,12 @@ if(empty($_GET['page'])){
                 }
             break;
 
+            case 'userprofil' :
+                if(empty($url[1])){; 
+                    $userController->displayUser(); 
+                } 
+            break;
+
             case 'dragonball' :
                 if(empty($url[1])){; 
                     $FigurineController->displayFigurineDragonBall(); 
@@ -135,8 +141,7 @@ if(empty($_GET['page'])){
                 if(empty($url[1])){; 
                     $FigurineController->displayFigurineNaruto();
                 }
-  
-      
+            break;
 
 
     }

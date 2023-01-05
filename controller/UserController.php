@@ -32,6 +32,11 @@ class UserController {
                 require_once "view/admin.user.view.php";
             }
 
+            public function displayUser() {
+                $users = $this->userManager->getUsers();
+                require_once "view/profil.user.view.php";
+            }
+
 // -------------------------------------------------------------------------------------------------------------------------------------
 
                 //----- VALIDATION DU FORM -----

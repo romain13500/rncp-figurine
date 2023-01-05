@@ -68,6 +68,6 @@ class LoginManager extends Manager{
                         alert('Vous etes déconnecté(e)'); 
                         location.href = "<?=URL?>accueil";
                 </script>
-            <?php        
+        <?php        
     }
 }
