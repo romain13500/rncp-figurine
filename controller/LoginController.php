@@ -28,8 +28,23 @@ class LoginController {
  
 // ------------------------------------------ fonction validation login   ---------------------------------------------------------------------------------------
 
+// public function connectUserValidation(){
+//     $user = $this->userManager->getUserByEmail($_POST['email'], $_POST['password']);
+//     $_SESSION['firstName'] = $user->getFirstName();
+//     $_SESSION['lastName'] = $user->getLastName();
+//     $_SESSION['email'] = $user->getEmail();
+//     $_SESSION['password'] = $user->getPassword();
+//     $_SESSION['adress'] = $user->getAdress();
+//     $_SESSION['numberPhone'] = $user->getNumberPhone();
+//     $_SESSION['role'] = $user->getRole();
 
-    public function loginValidation() { 
+//     header('Location: ' . URL . "accueil");
+
+//     }
+    
+public function loginValidation() { 
+
+       
         $logins = $this->loginManager->loginControl(); 
         
         $errors = array();
@@ -62,7 +77,7 @@ class LoginController {
             <?php
         
                 } 
-        }
+    }
         
 
     

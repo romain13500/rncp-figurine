@@ -28,21 +28,23 @@ class LoginManager extends Manager{
             }
     }
 
-    public function getUserByEmail($email){
-        foreach($this->users as $user){
-            if($user->getEmail() == $email){
-                return $user;
+    public function getUserByEmail($email, $password){
+
+        $this->loadUsers();
+
+        foreach ($this->users as $value) {
+            if ($email == $value->getEmail() && $password == $value->getPassword()) {
+                return $value;
             }
         }
     }
 
     public function loginControl(){
-            $recupUser = $this->getBdd()->prepare('SELECT * FROM users WHERE email = ? && username = ?');
+            $recupUser = $this->getBdd()->prepare('SELECT * FROM users WHERE email = ? && username = ? && MdP = ? && role = ?');
             $email = htmlspecialchars($_POST['email']);
             $username = htmlspecialchars($_POST['username']);
             $MdP = htmlspecialchars($_POST['MdP']);     
             $recupUser->execute(array($email, $username));
-
 
             if($recupUser->rowcount() > 0) {
                 session_start();
