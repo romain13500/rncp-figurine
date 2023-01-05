@@ -33,21 +33,28 @@ class FigurineController {
 
 
     }
-
-    public function deleteFigurine($id) {
-        $this->figurineManager->deleteFigurineDB($id);
-        header('location' . URL . 'figurineadmin');
-    }
-
+    
     public function editFigurineForm($id) {
-        $figurine = $this->figurineManager->getFigurine($id);
-        require_once "view/update.figurine.view.php";
+        $figurine = $this->figurineManager->getFigurineById($id);
+        require_once "view/edit.figurine.view.php";
     }
 
     public function editFigurineValidation($id) {
-        $this->figurineManager->updateFigurineDB($id, $_POST['image'], $_POST['name'], $_POST['price'], $_POST['manga']);
+        $this->figurineManager->updateFigurineDB($_POST['id'] , $_POST['image'], $_POST['name'], $_POST['price'], $_POST['manga']);
         header('location' . URL . 'figurineadmin');
     }
+
+    public function deleteFigurine($id) {
+        $this->figurineManager->deleteFigurineDB($id);
+        ?>
+            <script type="text/javascript">
+                            alert('Suppression reussi');
+                            location.href = "<?=URL?>figurineadmin";
+            </script>
+        <?php
+    }
+
+    
 
     
 }

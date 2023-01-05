@@ -90,7 +90,7 @@ if(empty($_GET['page'])){
             elseif ($url[1] === "edit") {
                 $FigurineController->editFigurineForm($url[2]);
             }
-            elseif ($url[1] === "editvalidation") {
+            elseif ($url[1] === "editvalid") {
                 $FigurineController->editFigurineValidation();
             }
             elseif ($url[1] === "delete") {
