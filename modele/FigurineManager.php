@@ -67,14 +67,14 @@ class FigurineManager extends Manager {
   // ***************************** MODIFIER FIGURINE ***********************************************************************
   // ***********************************************************************************************************************
 
-    public function updateFigurineDB($id, $image, $name, $price, $manga) {
-        $req = "UPDATE figurine SET image = :image, name = :name, price = :price, manga = :manga WHERE id = :id";
+    public function updateFigurineDB($id, $image, $name, $price) {
+        $req = "UPDATE figurine SET image = :image, name = :name, price = :price WHERE id = :id";
         $statement = $this->getBdd()->prepare($req);
         $statement->bindValue(":id", $id, PDO::PARAM_INT);
         $statement->bindValue(":image", $image, PDO::PARAM_STR);
         $statement->bindValue(":name", $name, PDO::PARAM_STR);
         $statement->bindValue(":price", $price, PDO::PARAM_INT);
-        $statement->bindValue(":manga", $manga, PDO::PARAM_INT);
+        
         $result = $statement->execute();
         $statement->closeCursor();
 
@@ -83,7 +83,7 @@ class FigurineManager extends Manager {
             $figurine->setImage($image);
             $figurine->setName($name);
             $figurine->setPrice($price);
-            $figurine->setManga($manga);
+            
         }
     }
 

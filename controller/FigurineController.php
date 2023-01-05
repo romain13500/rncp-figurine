@@ -58,9 +58,14 @@ class FigurineController {
         require_once "view/edit.figurine.view.php";
     }
 
-    public function editFigurineValidation($id) {
-        $this->figurineManager->updateFigurineDB($_POST['id'] , $_POST['image'], $_POST['name'], $_POST['price'], $_POST['manga']);
-        header('location' . URL . 'figurineadmin');
+    public function editFigurineValidation() {
+        $this->figurineManager->updateFigurineDB($_POST['id'] , $_POST['image'], $_POST['name'], $_POST['price']);
+        ?>
+            <script type="text/javascript">
+                            alert('Modification reussi');
+                            location.href = "<?=URL?>figurineadmin";
+            </script>
+        <?php
     }
 
     public function deleteFigurine($id) {

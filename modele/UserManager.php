@@ -21,7 +21,7 @@ class UserManager extends Manager{
     // -------------------------------------------------------------------------------------------------------------------------------------
     // ------------------------------------ AJOUT D'UN USER -----------------------------------------------------------------------------
 
-        public function newUserDB( $email, $username, $MdP, ){
+        public function newUserDB( $email, $username, $MdP, $role ){
 
             $req = " INSERT INTO users ( email, username, MdP, role) VALUES ( :email, :username, :MdP, :role) ";
                 // $MdP = password_hash($MdP, PASSWORD_DEFAULT);
@@ -34,7 +34,7 @@ class UserManager extends Manager{
             $statement->closeCursor();
 
             if($result){
-                $user = new User($this->getBdd()->lastInsertId(),  $email, $username, $MdP,);
+                $user = new User($this->getBdd()->lastInsertId(),  $email, $username, $MdP, 'user');
                 $this->addUser($user);
                 ?>
                         <script type="text/javascript">
@@ -82,22 +82,22 @@ class UserManager extends Manager{
     // ------------------------------------ EDIT -----------------------------------------------------------------------------
 
         public function editUserDB($id, $email, $username, $MdP){
-            $req = " UPDATE users SET  email = :email, username = :username, MdP = :MdP WHERE id = :id ";
+            $req = " UPDATE users SET  email = :email, username = :username, MdP = :MdP, WHERE id = :id ";
             $statement = $this->getBdd()->prepare($req);
             $statement->bindValue(":id", $id, PDO::PARAM_INT);
             $statement->bindValue(":email", $email, PDO::PARAM_STR);
             $statement->bindValue(":username", $username, PDO::PARAM_STR);
             $statement->bindValue(":MdP", $MdP, PDO::PARAM_STR);
-            $statement->bindValue(":role", $role, PDO::PARAM_STR);
             $result = $statement->execute();
             $statement->closeCursor();
             
             if($result){
-                $this->getUserById($id)->setEmail($email);
-                $this->getUserById($id)->setUsername($username);
-                $this->getUserById($id)->setMdP($MdP);
-                        
+                $user = $this->getUserById($id);
+                $user->setEmail($email);
+                $user->setUsername($username);
+                $user->setMdP($MdP);          
             }
+
         }
 
     // -------------------------------------------------------------------------------------------------------------------------------------

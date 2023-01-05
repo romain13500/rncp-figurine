@@ -8,18 +8,18 @@ ob_start()
 
 <container>
     
-<form  method="POST" action="<?= URL ?>useradmin/editvalidation" onSubmit=" return confirm('Voulez vous modifier l'utilisateur' ?')">
+<form  method="POST" action="<?= URL ?>useradmin/editvalidation">
 <div class="form-group">
-    <label for="title">Email</label>
-    <input type="text" class="form-control" value="<?= $user->getEmail()?>" name="email" id="title">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" value="<?= $user->getEmail()?>" name="email" id="email">
 </div>
 <div class="form-group">
-    <label for="nbPlayers">Identifiant</label>
-    <input type="text" class="form-control" name="username" value="<?= $user->getUsername()?>" id="nbPlayers">
+    <label for="username">Identifiant</label>
+    <input type="text" class="form-control" name="username" value="<?= $user->getUsername()?>" id="username">
 </div>
 <div class="form-group">
-    <label for="nbPlayers">Mot de passe</label>
-    <input type="text" class="form-control" name="MdP" value="<?= $user->getMdP()?>" id="nbPlayers">
+    <label for="MdP">Mot de passe</label>
+    <input type="text" class="form-control" name="MdP" value="<?= $user->getMdP()?>" id="MdP">
 </div>
 <div class="form-group">
     

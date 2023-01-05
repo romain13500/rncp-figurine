@@ -10,7 +10,7 @@
 <!----- input recuperant le titre du jeu dans bdd  ----->
 <div class="form-group">    
     <label for="image" class="mb-3">Image</label>
-     <input type="file" class="form-control" value="<?= $figurine->getImage()?>" name="image" id="image"> <!-- affichage du titre du jeu dans input -->
+     <input type="url" class="form-control" value="<?= $figurine->getImage()?>" name="image" id="image"> <!-- affichage du titre du jeu dans input -->
 </div>
 
 <!----- input recuperant le nombre de joueurs du jeu dans bdd  ----->

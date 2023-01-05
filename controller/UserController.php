@@ -42,7 +42,7 @@ class UserController {
                 //----- VALIDATION DU FORM -----
 
             public function newUserValidation() {  
-                $this->userManager->newUserDB( $_POST['email'], $_POST['username'], $_POST['MdP'],); 
+                $this->userManager->newUserDB( $_POST['email'], $_POST['username'], $_POST['MdP'],$_POST['role']); 
                 $errors = array();
 
                 if(empty($_POST['email'])){
@@ -110,7 +110,14 @@ public function editUserForm($id) {
 
 public function editUserValidation() {  
     $this->userManager->editUserDB($_POST['id'],  $_POST['email'], $_POST['username'], $_POST['MdP']);
-    header('Location: '. URL ."useradmin");
+    
+    ?>
+    <script type="text/javascript">
+        alert('Votre profil a bien été modifié');
+        location.href = "<?=URL?>useradmin";
+    </script>
+    <?php
+    
 }
 
    // ------------------------------------------------------------------------------------------------------------------------------------- 
