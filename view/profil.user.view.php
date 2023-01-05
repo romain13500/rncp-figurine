@@ -9,7 +9,7 @@ ob_start();
     <div class="row">
 
 <label for="firstname"> Votre prénom :</label>
-<input type="text" value="" name="username" id="" >
+<input type="text" value="<?= $_SESSION['username']?>" name="username" id="" >
 
 <label for="lastname"> Votre nom :</label>
 <input type="text" value="" name="lastname" id="">

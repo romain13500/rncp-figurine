@@ -67,6 +67,7 @@ class FigurineController {
             </script>
         <?php
     }
+    
 
     public function deleteFigurine($id) {
         $this->figurineManager->deleteFigurineDB($id);
