@@ -50,8 +50,24 @@ class UserController {
                 $user = $this->userManager->getUserByEmail($_POST['email'], $_POST['MdP']);
                 
                 $errors = array();
-                
-                if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)   ){
+
+
+                if ($_POST['email'] === $user->getEmail() && $_POST['MdP'] === $user->getMdP()){
+                    session_start();
+                    $_SESSION['id'] = $user->getId();
+                    $_SESSION['username'] = $user->getUsername();
+                    $_SESSION['email'] = $user->getEmail();
+                    $_SESSION['MdP'] = $user->getMdP();
+                    $_SESSION['role'] = $user->getRole();
+              
+                    ?>
+                                <script type="text/javascript">
+                                    alert('Vous etes connecté(e)<?= $_SESSION['username'] ?>');
+                                    location.href = "<?=URL?>accueil";
+                                </script>
+                    <?php
+                }
+                elseif(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
                     $errors['email'] = "Verifiez votre email";
                     ?>
                             <script type="text/javascript">
@@ -70,24 +86,19 @@ class UserController {
                             </script>
                     <?php
                     }
-                    else{
-                        session_start();
-                        $_SESSION['id'] = $user->getId();
-                        $_SESSION['username'] = $user->getUsername();
-                        $_SESSION['email'] = $user->getEmail();
-                        $_SESSION['MdP'] = $user->getMdP();
-                        $_SESSION['role'] = $user->getRole();
-                  
-                        ?>
-                                    <script type="text/javascript">
-                                        alert('Vous etes connecté(e)<?= $_SESSION['username'] ?>');
-                                        location.href = "<?=URL?>accueil";
-                                    </script>
-                        <?php
-                    }
-                
-                
+                elseif($_POST['email'] !== $user->getEmail() && $_POST['MdP'] !== $user->getMdP()){
+                    $errors['email'] = "Verifiez votre email";
+                    $errors['MdP'] = "Verifiez votre mot de passe";
+                    ?>
+                            <script type="text/javascript">
+                                alert('<?= $errors['email'] ?>');
+                                alert('<?= $errors['MdP'] ?>');
+                                location.href = "<?=URL?>login";
+                            </script>
+                    <?php
                 }
+            }
+                
         // -------------------------------------------------------------------------------------------------------------------------------------
 
                 // ----- FUNCTION LOGOUT -----
