@@ -6,9 +6,6 @@ define("URL" , str_replace("index.php","",(isset($_SERVER['HTTPS']) ? "https" : 
 require_once "controller/UserController.php";
 $userController = new UserController;
 
-require_once "controller/LoginController.php";
-$LoginController = new LoginController;
-
 require_once "controller/FigurineController.php";
 $FigurineController = new FigurineController;
 
@@ -39,15 +36,15 @@ if(empty($_GET['page'])){
         case 'login':
 
             if (empty($url[1])){
-                $LoginController->displayLogin(); 
+                $userController->displayLogin(); 
              }
 
              elseif ($url[1] === "connexion") {
-                $LoginController->connectUserValidation();
+                $userController->connectUserValidation();
             }
 
             elseif ($url[1] === "logout") {
-                $LoginController->logoutValidation();
+                $userController->logoutValidation();
             }
             break;
 
@@ -122,7 +119,7 @@ if(empty($_GET['page'])){
 
             case 'userprofil' :
                 if(empty($url[1])){; 
-                    $LoginController->displayProfilUser();
+                    $userController->displayProfilUser();
                 } 
             break;
 

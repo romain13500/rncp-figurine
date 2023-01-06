@@ -10,10 +10,6 @@ ob_start()
         <label for="email" class="form-label">Votre email :</label>
         <input type="email" class="form-control bg-info bg-opacity-10 border border-success" id="email" name="email" value="">
     </div><br>    
-<div class="mb-3 w-50 m-auto">
-        <label for="username" class="form-label">Votre identifiant :</label>
-        <input type="text" class="form-control bg-info bg-opacity-10 border border-success" id="username" name="username" value="">
-    </div><br>
     <div class="mb-3 w-50 m-auto">
         <label for="pass" class="form-label">Password :</label>
         <input type="password" class="form-control bg-info bg-opacity-10 border border-success" id="MdP" name="MdP" value="">

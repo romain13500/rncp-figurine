@@ -30,8 +30,77 @@ class UserController {
             public function displayUserAdmin() {
                 $users = $this->userManager->getUsers();
                 require_once "view/admin.user.view.php";
-                var_dump($_POST);
                
+            }
+
+            public function displayProfilUser() {
+                if(session_start()){
+                    $users = $this->userManager->getUsers();
+                    require_once "view/profil.user.view.php";
+                }
+               
+            }
+
+
+// -------------------------------------------------------------------------------------------------------------------------------------
+
+                // ----- FUNCTION CONNECT LOGIN -----
+
+            public function connectUserValidation(){
+                $user = $this->userManager->getUserByEmail($_POST['email'], $_POST['MdP']);
+                
+                $errors = array();
+                
+                if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)   ){
+                    $errors['email'] = "Verifiez votre email";
+                    ?>
+                            <script type="text/javascript">
+                                alert('<?= $errors['empty'] ?>');
+                                location.href = "<?=URL?>login";
+                            </script>
+                    <?php 
+                    header ('location' . URL . 'login');
+                }
+                elseif (empty($_POST['MdP']) && !password_verify($_POST['MdP'], $user->getMdP())){
+                    $errors['MdP'] = "Verifiez votre mot de passe";
+                    ?>
+                            <script type="text/javascript">
+                                alert('<?= $errors['MdP'] ?>');
+                                location.href = "<?=URL?>login";
+                            </script>
+                    <?php
+                    }
+                    else{
+                        session_start();
+                        $_SESSION['id'] = $user->getId();
+                        $_SESSION['username'] = $user->getUsername();
+                        $_SESSION['email'] = $user->getEmail();
+                        $_SESSION['MdP'] = $user->getMdP();
+                        $_SESSION['role'] = $user->getRole();
+                  
+                        ?>
+                                    <script type="text/javascript">
+                                        alert('Vous etes connecté(e)<?= $_SESSION['username'] ?>');
+                                        location.href = "<?=URL?>accueil";
+                                    </script>
+                        <?php
+                    }
+                
+                
+                }
+        // -------------------------------------------------------------------------------------------------------------------------------------
+
+                // ----- FUNCTION LOGOUT -----
+
+            public function logoutValidation() { 
+                session_start();
+                session_destroy();
+                ?>
+                            <script type="text/javascript">
+                                alert('Vous etes deconnecté(e)');
+                                location.href = "<?=URL?>accueil";
+                            </script>
+                <?php
             }
 
 
