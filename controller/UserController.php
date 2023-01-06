@@ -30,6 +30,8 @@ class UserController {
             public function displayUserAdmin() {
                 $users = $this->userManager->getUsers();
                 require_once "view/admin.user.view.php";
+                var_dump($_POST);
+               
             }
 
             public function displayUser() {
@@ -99,9 +101,12 @@ class UserController {
 
                 //----- FORM  -----
 
-public function editUserForm($id) {  
+public function editUserForm($id) { 
     $user = $this->userManager->getUserById($id);
+    var_dump($_POST);  
      require_once "view/edit.user.view.php";
+
+    
 }
 
 // -------------------------------------------------------------------------------------------------------------------------------------
@@ -117,9 +122,7 @@ public function editUserValidation() {
         location.href = "<?=URL?>useradmin";
     </script>
     <?php
-    
 }
-
    // ------------------------------------------------------------------------------------------------------------------------------------- 
 
                 // ----- SUPPRESSION -----

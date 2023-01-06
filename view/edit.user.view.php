@@ -8,7 +8,7 @@ ob_start()
 
 <container>
     
-<form  method="POST" action="<?= URL ?>useradmin/editvalidation">
+<form  method="POST" action="<?= URL ?>useradmin/editvalidation" >
 <div class="form-group">
     <label for="email">Email</label>
     <input type="text" class="form-control" value="<?= $user->getEmail()?>" name="email" id="email">

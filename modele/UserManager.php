@@ -81,8 +81,10 @@ class UserManager extends Manager{
     // -------------------------------------------------------------------------------------------------------------------------------------
     // ------------------------------------ EDIT -----------------------------------------------------------------------------
 
+
         public function editUserDB($id, $email, $username, $MdP){
-            $req = " UPDATE users SET  email = :email, username = :username, MdP = :MdP, WHERE id = :id ";
+            
+            $req = " UPDATE users SET  email = :email, username = :username, MdP = :MdP WHERE id = :id ";
             $statement = $this->getBdd()->prepare($req);
             $statement->bindValue(":id", $id, PDO::PARAM_INT);
             $statement->bindValue(":email", $email, PDO::PARAM_STR);
@@ -97,8 +99,9 @@ class UserManager extends Manager{
                 $user->setUsername($username);
                 $user->setMdP($MdP);          
             }
-
         }
+
+
 
     // -------------------------------------------------------------------------------------------------------------------------------------
     // ---------------------------------------------------- DELETE ---------------------------------------------------------------

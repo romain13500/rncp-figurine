@@ -42,7 +42,7 @@ public function connectUserValidation(){
                  </script>
         <?php 
     }
-    elseif(empty($_POST['username'])|| !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])){
+    elseif(empty($_POST['username'])|| !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username']) || $_POST['username'] != $user->getUsername()){
         $errors['email'] = "Verifiez votre pseudo";
         ?>
                     <script type="text/javascript">
@@ -62,6 +62,7 @@ public function connectUserValidation(){
     } 
    
         session_start();
+        $_SESSION['id'] = $user->getId();
         $_SESSION['username'] = $user->getUsername();
         $_SESSION['email'] = $user->getEmail();
         $_SESSION['MdP'] = $user->getMdP();

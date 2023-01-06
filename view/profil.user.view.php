@@ -8,14 +8,14 @@ ob_start();
 <div class="container">
     <div class="row">
 
-<label for="firstname"> Votre prénom :</label>
-<input type="text" value="<?= $_SESSION['username']?>" name="username" id="" >
+<label for="firstname"> Votre email :</label>
+<input type="text" value="<?= $_SESSION['email']?>" name="email" id="email" >
 
-<label for="lastname"> Votre nom :</label>
-<input type="text" value="" name="lastname" id="">
+<label for="lastname"> Votre identifiant :</label>
+<input type="text" value="<?= $_SESSION['username']?>" name="username" id="">
 
 <label for="MdP"> Votre mot de passe :</label>
-<input type="password" value="" name="MdP" id="MdP">
+<input type="password" value="<?= $_SESSION['MdP']?>" name="MdP" id="MdP">
 
 </div>
 </div>

@@ -16,6 +16,8 @@ class LoginManager extends Manager{
         return $this->users;
     }
 
+
+
     public function loadUser(){
          $req = $this->getBdd()->query("SELECT * FROM users");
          $req->execute();
@@ -28,6 +30,8 @@ class LoginManager extends Manager{
             }
     }
 
+    
+
     public function getUserByEmail($email, $MdP){
 
         $this->loadUser();
@@ -39,26 +43,6 @@ class LoginManager extends Manager{
         }
     }
 
-    public function loginControl(){
-            $recupUser = $this->getBdd()->prepare('SELECT * FROM users WHERE email = ? && username = ? && MdP = ? && role = ?');
-            $email = htmlspecialchars($_POST['email']);
-            $username = htmlspecialchars($_POST['username']);
-            $MdP = htmlspecialchars($_POST['MdP']);     
-            $recupUser->execute(array($email, $username));
-
-            if($recupUser->rowcount() > 0) {
-                session_start();
-                $_SESSION['email'] = $email;
-                $_SESSION['username'] = $username;
-                $_SESSION['role'] = $role;
-                ?>
-                    <script type="text/javascript">
-                        alert('Vous etes connecté(e)<?= $_SESSION['username'] ?>');
-                        location.href = "<?=URL?>accueil";
-                    </script>
-                <?php                  
-            } 
-    }
 
     public function logoutControl(){
         
