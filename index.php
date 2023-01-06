@@ -118,11 +118,11 @@ if(empty($_GET['page'])){
                     $userController->deleteUser($url[2]);
                 }
             break;
-            
+
 
             case 'userprofil' :
                 if(empty($url[1])){; 
-                    $userController->displayUser(); 
+                    $LoginController->displayProfilUser();
                 } 
             break;
 

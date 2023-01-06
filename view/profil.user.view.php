@@ -8,17 +8,18 @@ ob_start();
 <div class="container">
     <div class="row">
 
-<label for="firstname"> Votre email :</label>
-<input type="text" value="<?= $_SESSION['email']?>" name="email" id="email" >
+        <label for="firstname"> Votre email :</label>
+            <p><?= $_SESSION['email']?></p>
 
-<label for="lastname"> Votre identifiant :</label>
-<input type="text" value="<?= $_SESSION['username']?>" name="username" id="">
+        <label for="lastname"> Votre identifiant :</label>
+            <input type="text" value="<?= $_SESSION['username']?>" name="username" id="">
 
-<label for="MdP"> Votre mot de passe :</label>
-<input type="password" value="<?= $_SESSION['MdP']?>" name="MdP" id="MdP">
+        <label for="MdP"> Votre mot de passe :</label>
+            <input type="password" value="<?= $_SESSION['MdP']?>" name="MdP" id="MdP">
 
+    </div>
 </div>
-</div>
+
 <?php
 $content = ob_get_clean();
 $title = "Bienvenue dans le monde des figurines";

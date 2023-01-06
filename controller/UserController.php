@@ -34,10 +34,6 @@ class UserController {
                
             }
 
-            public function displayUser() {
-                $users = $this->userManager->getUsers();
-                require_once "view/profil.user.view.php";
-            }
 
 // -------------------------------------------------------------------------------------------------------------------------------------
 

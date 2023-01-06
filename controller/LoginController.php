@@ -24,6 +24,14 @@ class LoginController {
         
     }
 
+
+    public function displayProfilUser() {
+        
+        require_once "view/profil.user.view.php";
+    }
+
+  
+
     
  
 // ------------------------------------------ fonction validation login   ---------------------------------------------------------------------------------------
@@ -60,7 +68,6 @@ public function connectUserValidation(){
                     </script>
         <?php
     } 
-   
         session_start();
         $_SESSION['id'] = $user->getId();
         $_SESSION['username'] = $user->getUsername();
@@ -75,9 +82,7 @@ public function connectUserValidation(){
                     </script>
         <?php
 
-        header('Location: ' . URL . "accueil");
 
-    
 }
     
 
