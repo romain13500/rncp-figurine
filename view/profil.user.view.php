@@ -12,10 +12,19 @@ ob_start();
             <p><?= $_SESSION['email']?></p>
 
         <label for="lastname"> Votre identifiant :</label>
-            <input type="text" value="<?= $_SESSION['username']?>" name="username" id="">
+            <p><?= $_SESSION['username']?></p>
 
         <label for="MdP"> Votre mot de passe :</label>
-            <input type="password" value="<?= $_SESSION['MdP']?>" name="MdP" id="MdP">
+         <p><?= $_SESSION['MdP']?></p>
+        <div class="d-flex flex-wrap">
+            <form  method="POST" action="">
+                <button type="button" class="btn btn-info w-50"><a href="<?= URL ?>userprofil/edit/">Modifier</a></button>
+            </form>
+            <form  method="POST" action="">
+                <button type="button" class="btn btn-danger w-50"><a href="<?= URL ?>userprofil/delete/">Supprimer</a></button>
+            </form>
+
+        </div>
 
     </div>
 </div>

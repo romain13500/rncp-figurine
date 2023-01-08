@@ -34,12 +34,12 @@ class UserController {
             }
 
             public function displayProfilUser() {
-                if(session_start()){
-                    $users = $this->userManager->getUsers();
-                    require_once "view/profil.user.view.php";
-                }
-               
+                session_start();
+                $users = $this->userManager->getUsers();
+                require_once "view/profil.user.view.php";
             }
+               
+            
 
 
 // -------------------------------------------------------------------------------------------------------------------------------------
@@ -177,13 +177,20 @@ class UserController {
 
                 //----- FORM  -----
 
-public function editUserForm($id) { 
-    $user = $this->userManager->getUserById($id);
-    var_dump($_POST);  
-     require_once "view/edit.user.view.php";
+            public function editUserForm($id) { 
+                $user = $this->userManager->getUserById($id);
+                require_once "view/edit.user.view.php";
+            }
 
-    
-}
+            public function editProfilForm($id) { 
+                $user = $this->userManager->getUserById($_SESSION['id']);
+                var_dump($_POST);  
+                require_once "view/edit.profil.view.php";
+            }
+
+                // -------------------------------------------------------------------------------------------------------------------------------------
+
+                // ----- AFFICHAGE DES USERS -----
 
 // -------------------------------------------------------------------------------------------------------------------------------------
 

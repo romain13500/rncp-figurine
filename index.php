@@ -121,6 +121,9 @@ if(empty($_GET['page'])){
                 if(empty($url[1])){; 
                     $userController->displayProfilUser();
                 } 
+                elseif ($url[1] === "edit") {
+                    $userController->editProfilForm($url[2]);
+                }
             break;
 
             case 'dragonball' :
