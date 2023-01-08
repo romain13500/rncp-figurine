@@ -67,36 +67,7 @@ class UserController {
                                 </script>
                     <?php
                 }
-                elseif(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-                    $errors['email'] = "Verifiez votre email";
-                    ?>
-                            <script type="text/javascript">
-                                alert('<?= $errors['empty'] ?>');
-                                location.href = "<?=URL?>login";
-                            </script>
-                    <?php 
-                    header ('location' . URL . 'login');
-                }
-                elseif (empty($_POST['MdP']) && !password_verify($_POST['MdP'], $user->getMdP())){
-                    $errors['MdP'] = "Verifiez votre mot de passe";
-                    ?>
-                            <script type="text/javascript">
-                                alert('<?= $errors['MdP'] ?>');
-                                location.href = "<?=URL?>login";
-                            </script>
-                    <?php
-                    }
-                elseif($_POST['email'] !== $user->getEmail() && $_POST['MdP'] !== $user->getMdP()){
-                    $errors['email'] = "Verifiez votre email";
-                    $errors['MdP'] = "Verifiez votre mot de passe";
-                    ?>
-                            <script type="text/javascript">
-                                alert('<?= $errors['email'] ?>');
-                                alert('<?= $errors['MdP'] ?>');
-                                location.href = "<?=URL?>login";
-                            </script>
-                    <?php
-                }
+                
             }
                 
         // -------------------------------------------------------------------------------------------------------------------------------------

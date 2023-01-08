@@ -3,7 +3,7 @@
 }
 
 
-nav p:hover{
+li h3:hover{
     color: #ee8132 !important;
    
 } 
@@ -22,19 +22,18 @@ input:invalid {
 }
 
 #dragonball{
-    background-image: url("../../image/dragonball/planetedb.png") !important;
+    background-image: url("./image/dragonball/planetedb.png") !important;
 }
 
 .cards{
 
     transition: all 0.2s ease !important;
     cursor: pointer !important;
-    
 
   }
 
 .cards:hover{
 
-    box-shadow: 5px 6px 6px 2px #e9ecef !important;
+    box-shadow: 5px 6px 6px 2px #eca60d !important;
     transform: scale(1.1) !important;
 }

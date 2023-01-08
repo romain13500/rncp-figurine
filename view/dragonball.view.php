@@ -15,9 +15,9 @@
                         continue;
                     }
             ?> 
-            <div class="card m-auto bg-dark rounded shadow" style="width: 20rem;">
+            <div class="cards m-auto bg-dark rounded shadow" style="width: 20rem;">
 
-                <img class="rounded-top" src="<?= $figurine->getImage() ?>" alt="img">
+                <img class="rounded-top w-100" src="<?= $figurine->getImage() ?>" alt="img">
 
                 <hr>
                     <div class="card-body">

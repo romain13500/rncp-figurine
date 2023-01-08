@@ -31,24 +31,25 @@
             <div class="collapse navbar-collapse" id="navbarColor02">
               <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                  <p id="navlink"><a class="nav-link active" href="<?= URL ?>accueil">Accueil
+                  <h3><a class="nav-link active" href="<?= URL ?>accueil">Accueil
                     <span class="visually-hidden">(current)</span>
-                  </a></p>
+                  </a></h3>
                 </li>
                 <li class="nav-item">
-                  <p id="navlink"><a class="nav-link" href="precommande"> Precommande</a></p>
+                  <h3 id="link"><a class="nav-link" href="precommande"> Precommande</a></h3>
                 </li>
                 <li class="nav-item">
-                  <p id="navlink"><a class="nav-link" href="contact">Contact</a></p>
+                  <h3 id="link"><a class="nav-link" href="contact">Contact</a></h3>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorie</a>
+                  <h3><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorie</a>
                   <div class="dropdown-menu bg-dark">
-                    <a class="dropdown-item text-warning" href="<?= URL ?>dragonball">Dragon Ball</a>
-                    <a class="dropdown-item text-warning" href="<?= URL ?>onepiece">One Piece</a>
-                    <a class="dropdown-item text-warning" href="<?= URL ?>naruto">Naruto</a>
+                    <h2><a class="dropdown-item text-warning" href="<?= URL ?>dragonball">Dragon Ball</a></h2>
+                    <h2><a class="dropdown-item text-warning" href="<?= URL ?>onepiece">One Piece</a></h2>
+                    <h2><a class="dropdown-item text-warning" href="<?= URL ?>naruto">Naruto</a></h2>
                     
                   </div>
+                  </h3>
                 </li>
               </ul>
        
