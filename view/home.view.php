@@ -8,26 +8,47 @@ ob_start();
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-      <div class="card card-1">
-        <h3>Ionic Native</h3>
-        <p>A curated set of   ES5/ES6/TypeScript wrappers for plugins to easily add any native functionality to your Ionic apps.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card card-2">
-        <h3>UI Components</h3>
-        <p>Tabs, buttons, inputs, lists, cards, and more! A comprehensive library
-          of mobile UI components, ready to go.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card card-3">
-        <h3>Theming</h3>
-        <p>Learn how to easily customize and modify your app’s design to fit your
-          brand across all mobile platform styles.</p>
-      </div>
-    </div>
+    <h2>top vente</h2>
+
+        <div class="col-md-4 border-right">
+            <div class="cards">
+           <div class=" second bg-primary p-4 text-center">
+                    <img class="w-75 rounded" src="image/dragonball/gogeta.jpeg"/>
+                    <hr>
+                    <p class="line2">Gogeta</p>
+                    <p>99€</p> 
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 border-right">
+            <div class="cards">
+           <div class=" second bg-primary p-4 text-center">
+                    <img class="w-75 rounded" src="https://www.mangatori.fr/1800179-large_default/megahouse-89537-one-piece-pop-marco-phoenix-figure-rerun.jpg"/>
+                    <hr>
+                    <p class="line2">Marco Pheonix</p>
+                    <p>390€</p>
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4 border-right">
+                <div class="cards">
+                    
+               
+                <div class="first bg-primary p-4 text-center">
+                    <img class="w-75 rounded" src="https://www.mangatori.fr/1707714-large_default/banpresto-ban18406-grandista-nero-naruto-uzumaki-manga-dimensions.jpg" />
+                    <hr>
+                    <p>Naruto</p>
+                <p class="line1">79€</p>
+                    
+                </div>
+
+                 </div>
+                  
+           </div>
   </div>
 </div>
 <!-- <div class ="container ">

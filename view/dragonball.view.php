@@ -2,7 +2,8 @@
 <div>
     <img class="w-75" src="./image/dragonball/shenron.jpeg" alt="img">
 </div>
-<container>
+<div class="container">
+    
     <div id="drangonball">
     <div class="row">
         <div class="d-flex flex-wrap my-5 ">
@@ -29,7 +30,8 @@
         </div>
     </div> 
     </div>
-</container>
+    
+                </div>
 
 <?php
 

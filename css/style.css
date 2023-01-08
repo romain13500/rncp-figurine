@@ -21,48 +21,20 @@ input:invalid {
     background-color: lightpink !important;
 }
 
-.card{
-    border-radius: 4px !important;
-    background: #fff !important;
-    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05) !important;
-      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12) !important;
-  padding: 14px 80px 18px 36px !important;
-  cursor: pointer !important;
+#dragonball{
+    background-image: url("../../image/dragonball/planetedb.png") !important;
 }
 
-.card:hover{
-     transform: scale(1.05) !important;
-  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06) !important;
-}
+.cards{
 
-.card h3{
-  font-weight: 600 !important;
-}
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    
 
-.card img{
-  position: absolute !important;
-  top: 20px !important;
-  right: 15px !important;
-  max-height: 120px !important;
-}
+  }
 
-.card-1{
-  background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png) !important;
-      background-repeat: no-repeat !important;
-    background-position: right !important;
-    background-size: 80px !important;
-}
+.cards:hover{
 
-.card-2{
-   background-image: url(https://ionicframework.com/img/getting-started/components-card.png) !important;
-      background-repeat: no-repeat !important;
-    background-position: right !important;
-    background-size: 80px !important;
-}
-
-.card-3{
-   background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
-      background-repeat: no-repeat !important;
-    background-position: right !important;
-    background-size: 80px !important;
+    box-shadow: 5px 6px 6px 2px #e9ecef !important;
+    transform: scale(1.1) !important;
 }
