@@ -21,6 +21,44 @@ input:invalid {
     background-color: lightpink !important;
 }
 
+.block {
+	position: relative !important;
+    margin-top: 10%;
+    margin-bottom: 10%;
+	height: 580px;
+	background: linear-gradient(0deg, #000, #272727) !important;
+}
+
+.block:before, .block:after {
+	content: '' !important;
+	position: absolute !important;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000) !important;
+	background-size: 400% !important;
+	width: calc(100% + 4px) !important;
+	height: calc(100% + 4px) !important;
+	z-index: -1 !important;
+	animation: steam 20s linear infinite !important;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0 !important;
+	}
+	50% {
+		background-position: 400% 0 !important;
+	}
+	100% {
+		background-position: 0 0 !important;
+	}
+}
+
+.block:after {
+	filter: blur(50px) !important;
+}
+
 #dragonball{
     background-image: url("./image/dragonball/planetedb.png") !important;
     background-size: cover !important;
