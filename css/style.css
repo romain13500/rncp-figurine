@@ -23,6 +23,7 @@ input:invalid {
 
 #dragonball{
     background-image: url("./image/dragonball/planetedb.png") !important;
+    background-size: cover !important;
 }
 
 .cards{
