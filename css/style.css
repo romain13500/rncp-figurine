@@ -73,6 +73,6 @@ input:invalid {
 
 .cards:hover{
 
-    box-shadow: 5px 6px 6px 2px #eca60d !important;
+    box-shadow: 5px 5px 5px 2px #f6f316 !important;
     transform: scale(1.1) !important;
 }

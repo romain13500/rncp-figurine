@@ -10,7 +10,7 @@ ob_start();
     <div class="block">
         <div class="row">
         
-            <h2 class="mt-3 mb-3 text-danger">TOP VENTE</h2>
+            <h2 class="mt-3 mb-5 text-danger">TOP VENTE</h2>
 
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
