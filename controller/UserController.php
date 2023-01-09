@@ -67,7 +67,15 @@ class UserController {
                                 </script>
                     <?php
                 }
-                
+                elseif(empty($_POST['email']) || empty($_POST['MdP'])){
+                    $errors['empty'] = "Veuillez entrer une adresse email et un mot de passe";
+                    ?>
+                                <script type="text/javascript">
+                                    alert('<?= $errors['empty'] ?>');
+                                    location.href = "<?=URL?>login";
+                                </script>
+                    <?php
+                }
             }
                 
         // -------------------------------------------------------------------------------------------------------------------------------------
@@ -133,7 +141,7 @@ class UserController {
                     <?php
                 }
     
-                elseif (empty($_POST['MdP'])){
+                elseif (empty($_POST['MdP']) ){
                     $errors['mdp'] = "Veuillez entrer un mot de passe";
                     ?>
                             <script type="text/javascript">
