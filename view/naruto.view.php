@@ -15,7 +15,7 @@
                         continue;
                     }
             ?> 
-            <div class="cards m-auto bg-dark rounded shadow" style="width: 18rem;">
+            <div class="cards m-auto bg-primary rounded shadow mb-5" style="width: 18rem;">
 
                 <img class="rounded-top w-100" src="<?= $figurine->getImage() ?>" alt="img">
 

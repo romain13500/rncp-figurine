@@ -10,20 +10,20 @@ ob_start();
 <div class="container">
     <div class="row">
 
-        <label for="firstname"> Votre email :</label>
+        <label for="email"> Votre email :</label>
             <p><?= $_SESSION['email']?></p>
 
-        <label for="lastname"> Votre identifiant :</label>
+        <label for="username"> Votre identifiant :</label>
             <p><?= $_SESSION['username']?></p>
 
         <label for="MdP"> Votre mot de passe :</label>
          <p><?= $_SESSION['MdP']?></p>
-        <div class="d-flex flex-wrap">
-            <form  method="POST" action="">
-                <button type="button" class="btn btn-info w-50"><a href="<?= URL ?>userprofil/edit/">Modifier</a></button>
+        <div class="d-flex flex-wrap justify-content-around">
+            <form  method="POST" action="userprofil/edit/">
+                <button type="button" class="btn btn-info w-100"><a href="<?= URL ?>userprofil/edit/">Modifier</a></button>
             </form>
             <form  method="POST" action="">
-                <button type="button" class="btn btn-danger w-50"><a href="<?= URL ?>userprofil/delete/">Supprimer</a></button>
+                <button type="button" class="btn btn-danger w-100"><a href="<?= URL ?>userprofil/delete/">Supprimer</a></button>
             </form>
         </div>
 

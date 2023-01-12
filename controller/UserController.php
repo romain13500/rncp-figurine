@@ -169,6 +169,7 @@ class UserController {
             }
 
             public function editProfilForm($id) { 
+                $user = $this->userManager->getUserById($id);
                 require_once "view/edit.profil.view.php";
             }
 

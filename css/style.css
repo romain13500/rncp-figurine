@@ -26,7 +26,7 @@ input:invalid {
     margin-top: 10%;
     margin-bottom: 10%;
 	height: 580px;
-	background: linear-gradient(0deg, #000, #272727) !important;
+	background-color: dark !important;
 }
 
 .block:before, .block:after {
@@ -59,8 +59,8 @@ input:invalid {
 	filter: blur(50px) !important;
 }
 
-.container #dragonball{
-    background-image: url("./image/dragonball/planetedb.png") !important;
+.dragonball{
+    background-image: url("./image/dragonball/planetedb.png") ;
     background-size: cover !important;
 }
 

@@ -7,7 +7,7 @@ ob_start();
 <p> Accueil</p>
 
 <div class="container">
-    <div class="block">
+    <div class="block .bg-dark">
         <div class="row">
         
             <h2 class="mt-3 mb-5 text-danger">TOP VENTE</h2>

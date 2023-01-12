@@ -22,9 +22,10 @@ class UserManager extends Manager{
     // ------------------------------------ AJOUT D'UN USER -----------------------------------------------------------------------------
 
         public function newUserDB( $email, $username, $MdP, $role ){
-
+            
+            $MdP = password_hash($_POST['MdP'], PASSWORD_BCRYPT);
             $req = " INSERT INTO users ( email, username, MdP, role) VALUES ( :email, :username, :MdP, :role) ";
-            $MdP = password_hash($MdP, PASSWORD_BCRYPT);
+            
             $statement = $this->getBdd()->prepare($req);
             $statement->bindValue(":email", $email, PDO::PARAM_STR);
             $statement->bindValue(":username", $username, PDO::PARAM_STR);
