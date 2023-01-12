@@ -34,7 +34,6 @@ class UserController {
             }
 
             public function displayProfilUser() {
-                session_start();
                 $users = $this->userManager->getUsers();
                 require_once "view/profil.user.view.php";
             }
@@ -48,30 +47,38 @@ class UserController {
 
             public function connectUserValidation(){
                 $user = $this->userManager->getUserByEmail($_POST['email'], $_POST['MdP']);
-                
                 $errors = array();
 
 
-                if ($_POST['email'] === $user->getEmail() && $_POST['MdP'] === $user->getMdP()){
-                    session_start();
+                if (!empty($_POST['email']) && !empty($_POST['MdP']) ){
+                    
                     $_SESSION['id'] = $user->getId();
                     $_SESSION['username'] = $user->getUsername();
                     $_SESSION['email'] = $user->getEmail();
                     $_SESSION['MdP'] = $user->getMdP();
                     $_SESSION['role'] = $user->getRole();
-              
                     ?>
                                 <script type="text/javascript">
                                     alert('Vous etes connecté(e)<?= $_SESSION['username'] ?>');
                                     location.href = "<?=URL?>accueil";
                                 </script>
                     <?php
+                    
                 }
                 elseif(empty($_POST['email']) || empty($_POST['MdP'])){
-                    $errors['empty'] = "Veuillez entrer une adresse email et un mot de passe";
+                    $errors['email'] = "Veuillez entrer une adresse email ou un mot de passe ";
                     ?>
                                 <script type="text/javascript">
-                                    alert('<?= $errors['empty'] ?>');
+                                    alert('<?= $errors['email'] ?>');
+                                    location.href = "<?=URL?>login";
+                                </script>
+                    <?php
+                }
+                elseif(!empty($_POST['email'] != $email) || !empty($_POST['MdP'] != $MdP)){
+                    $errors['email'] = "Votre adresse email ou votre mot de passe est incorrect";
+                    ?>
+                                <script type="text/javascript">
+                                    alert('<?= $errors['email'] ?>');
                                     location.href = "<?=URL?>login";
                                 </script>
                     <?php
@@ -162,8 +169,6 @@ class UserController {
             }
 
             public function editProfilForm($id) { 
-                $user = $this->userManager->getUserById($_SESSION['id']);
-                var_dump($_POST);  
                 require_once "view/edit.profil.view.php";
             }
 

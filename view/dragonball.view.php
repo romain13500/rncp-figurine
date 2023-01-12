@@ -1,10 +1,11 @@
 
 <!-- DEBUT DU FRONT -->
 <div>
-    <img class="w-75" src="./image/dragonball/shenron.jpeg" alt="img">
+    <h2>Dragon Ball</h2>  
+    <iframe width="800" height="400" src="https://www.youtube.com/embed/rbgcjUhtgnE?autoplay=1&mute=1&loop=1"></iframe>  
 </div>
+
 <div class="container">
-    
     <div id="drangonball">
     <div class="row">
         <div class="d-flex flex-wrap my-5 ">

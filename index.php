@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 define("URL" , str_replace("index.php","",(isset($_SERVER['HTTPS']) ? "https" : "http") . 
 "://".$_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] ));
 
@@ -8,13 +9,6 @@ $userController = new UserController;
 
 require_once "controller/FigurineController.php";
 $FigurineController = new FigurineController;
-
-
-
-
-
-
-
 
 
 
@@ -124,6 +118,14 @@ if(empty($_GET['page'])){
                 elseif ($url[1] === "edit") {
                     $userController->editProfilForm($url[2]);
                 }
+            break;
+
+            case 'precommande':
+                require_once "view/precommande.view.php";
+            break;
+
+            case 'contact':
+                require_once "view/contact.view.php";
             break;
 
             case 'dragonball' :

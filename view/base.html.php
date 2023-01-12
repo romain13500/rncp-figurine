@@ -1,9 +1,3 @@
-<?php
-
-    //On démarre une nouvelle session
-    session_start();
-
-   ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -119,7 +113,7 @@
       
     </h1>
     <div class="text-center text-warning"><h1><?= $content ?></h1></div>
-  </div>
+    </h1>
 </main>
 
 <footer>

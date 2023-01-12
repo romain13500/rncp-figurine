@@ -59,7 +59,7 @@ input:invalid {
 	filter: blur(50px) !important;
 }
 
-#dragonball{
+.container #dragonball{
     background-image: url("./image/dragonball/planetedb.png") !important;
     background-size: cover !important;
 }

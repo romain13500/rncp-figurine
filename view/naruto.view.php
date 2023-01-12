@@ -1,6 +1,7 @@
 <!-- DEBUT DU FRONT -->
 <div>
-    <img class="w-75" src="image/naruto/banniereNaruto.jpeg" alt="img">
+    <h2>Naruto</h2>
+    <iframe width="800" height="400" src="https://www.youtube.com/embed/5H0CNZrsbK8?autoplay=1&mute=1&loop=1"></iframe>
 </div>
 <container>
     <div id="drangonball">
@@ -34,7 +35,7 @@
 <?php
 
 $content = ob_get_clean();
-$title = "Dragon Ball";
+$title = "Naruto";
 require_once "base.html.php";
 
 ?>

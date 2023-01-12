@@ -1,5 +1,7 @@
 <?php 
-ob_start(); 
+ob_start();
+
+
 ?>
 <div>
     <h1>Votre compte :</h1>
@@ -23,8 +25,8 @@ ob_start();
             <form  method="POST" action="">
                 <button type="button" class="btn btn-danger w-50"><a href="<?= URL ?>userprofil/delete/">Supprimer</a></button>
             </form>
-
         </div>
+
 
     </div>
 </div>
