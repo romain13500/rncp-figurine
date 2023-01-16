@@ -1,7 +1,8 @@
 
 <!-- DEBUT DU FRONT -->
-<div>
-    <h2>Dragon Ball</h2>  
+<h2>Dragon Ball</h2>  
+<div class="d-flex flew-wrap justify-content-center">
+    
     <iframe width="800" height="400" src="https://www.youtube.com/embed/rbgcjUhtgnE?autoplay=1&mute=1&loop=1"></iframe>  
 </div>
 
