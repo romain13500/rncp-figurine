@@ -1,6 +1,7 @@
 <!-- DEBUT DU FRONT -->
-<div>
-    <h2>One Piece</h2>
+<h2>One Piece</h2>
+<div class="d-flex flew-wrap justify-content-center">
+    
     <iframe width="800" height="400" src="https://www.youtube.com/embed/A3b5XJCFiU8?autoplay=1&mute=1&loop=1"></iframe>
 </div>
 <container>
