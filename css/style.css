@@ -26,7 +26,7 @@ input:invalid {
     margin-top: 10%;
     margin-bottom: 10%;
 	height: 580px;
-	background: black !important;
+	background: rgb(91, 89, 89) !important;
 }
 
 .block:before, .block:after {
@@ -34,8 +34,8 @@ input:invalid {
 	position: absolute !important;
 	left: -2px;
 	top: -2px;
-	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
-		#0000ff, #00ff00,#ffff00, #ff0000) !important;
+	background: linear-gradient(45deg, #eb8d0a, #eb8d0a, #eb8d0a,#eb8d0a, #eb8d0a, #eb8d0a, 
+		#eb8d0a, #eb8d0a,#eb8d0a, #eb8d0a) !important;
 	background-size: 400% !important;
 	width: calc(100% + 4px) !important;
 	height: calc(100% + 4px) !important;
@@ -60,6 +60,7 @@ input:invalid {
 }
 
 div .dragonball{
+	border: #ee8132;
     background: url("./image/dragonball/planetedb.png") !important;
     background-size: cover !important;
 }
@@ -73,7 +74,7 @@ div .dragonball{
 
 .cards:hover{
 
-    box-shadow: 5px 5px 5px 2px #f6f316 !important;
+    box-shadow: 5px 5px 5px 2px #dc8408 !important;
     transform: scale(1.1) !important;
 }
 

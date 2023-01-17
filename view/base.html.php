@@ -16,7 +16,7 @@
 </head>
 <body class="bg-secondary">
   <header>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
       <div class="container-fluid">
         <a class="navbar-brand" href="<?= URL ?>accueil"><h1 class="text-warning" id=" site "> Heroes Collector</h1></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
