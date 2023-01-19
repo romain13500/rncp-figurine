@@ -52,7 +52,7 @@ class UserManager extends Manager{
 
         public function loadUser(){
                      
-            $req = $this->getBdd()->query("SELECT * FROM users");// ---- SELECTION DE LA TABLE "USERS"  -----    
+            $req = $this->getBdd()->query("SELECT * FROM users");// ---- SELECT TABLE "USERS"  -----    
             $req->execute();  //----- EXECUTE LA REQUETE
             $myUsers = $req->fetchAll(PDO::FETCH_ASSOC);  // RECUPERE LES DONNEES DE LA TABLE "USERS"
             $req->closeCursor();
