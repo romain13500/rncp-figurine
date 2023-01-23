@@ -7,7 +7,7 @@
 
   <div class="col-sm-8 col-md-5 mt-3">
     <label for="email" class="form-label"> Votre email :</label>
-    <input type="email" class="form-control bg-info bg-opacity-10 border border-success" id="email" name="email" placeholder="Entrez votre email"  >
+    <input type="email" class="form-control bg-info bg-opacity-10 border border-success" id="email" name="email" placeholder="Entrez votre email" required  >
   </div>
   
 
@@ -15,7 +15,7 @@
 
   <div class="col-sm-8 col-md-5 mt-3">
     <label for="username" class="form-label"> Votre identifiant :</label>
-    <input type="text" class="form-control bg-info bg-opacity-10 border border-success" id="username" name="username" placeholder="Entrez un identifiant"  >
+    <input type="text" class="form-control bg-info bg-opacity-10 border border-success" id="username" name="username" placeholder="Entrez un identifiant" required  >
   </div>
   
   
@@ -23,7 +23,7 @@
 
   <div class="col-sm-8 col-md-5 mt-3">
     <label for="pass" class="form-label"> Votre mot de passe :</label>
-    <input type="password" class="form-control bg-info bg-opacity-10 border border-success" id="MdP" name="MdP" placeholder="Entrez un mot de passe"  >
+    <input type="password" class="form-control bg-info bg-opacity-10 border border-success" id="MdP" name="MdP" placeholder="Entrez un mot de passe" required  >
   </div>
 
 <!-- CONDITION -->
