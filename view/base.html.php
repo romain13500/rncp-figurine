@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,7 +72,7 @@
                     ?>
                     
               <ul class="d-flex flex-wrap mx-auto">
-              <a href="#"><i class="fa-solid fa-basket-shopping fa-2x hover-zoom"style="color:silver"></i></a>
+              <a href="<?= URL?>panier"><i class="fa-solid fa-basket-shopping fa-2x hover-zoom"style="color:silver"></i></a>
                 <li class="nav-item dropstart list-style:none">
                   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa-regular fa-circle-user fa-2x hover-zoom mr-3" style="color:silver"></i></a>
                   <div class="dropdown-menu">
