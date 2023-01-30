@@ -70,9 +70,11 @@
 // --------------- SINON AFFICHE LE BOUTON DE DECONNEXION
             elseif (!empty($_SESSION['username'])) {
                     ?>
-              <ul class="m-auto">
+                    
+              <ul class="d-flex flex-wrap mx-auto">
+              <a href="#"><i class="fa-solid fa-basket-shopping fa-2x hover-zoom"style="color:silver"></i></a>
                 <li class="nav-item dropstart list-style:none">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa-regular fa-circle-user fa-2x hover-zoom" style="color:silver"></i></a>
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa-regular fa-circle-user fa-2x hover-zoom mr-3" style="color:silver"></i></a>
                   <div class="dropdown-menu">
                     <a class="align-self-center" href="<?= URL ?>userprofil"><h3 class="text-center m-auto">Mon compte</h3></a>
                     <hr>
@@ -87,7 +89,7 @@
                 </div>
                 </li>
               </ul>
-                <h4 class="text-warning"><?= $_SESSION['username'] ?></h4>
+                <h4 class="text-warning mx-auto"><?= $_SESSION['username'] ?></h4>
             
                 <?php
                   }
