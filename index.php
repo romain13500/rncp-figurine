@@ -50,9 +50,14 @@ if(empty($_GET['page'])){
         // *************************** PANIER ************************************************************************
 
         case 'addPanier':
-            if(isset($_GET['id'])){
+            if(!isset($_GET['id'])){
+                echo "Erreur : aucun identifiant de figurine envoyé<br>";
+                var_dump($_SESSION['panier']);
+            }
+            else {
                 $FigurineController->addFigurinePanier($_GET['id']);
             }
+        break;
 
         case 'panier':
             if(empty($url[1])){

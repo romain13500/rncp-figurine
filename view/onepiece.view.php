@@ -7,7 +7,7 @@
 <container>
     <div id="drangonball">
     <div class="row">
-        <div class="d-flex flex-wrap my-5 ">
+    <form class="d-flex flex-wrap my-5" method="post" action="<?= URL ?>addPanier">
             
  <!-- BOUCLE SUR LE TABLEAU FIGURINE ET AFFICHER -->
            <?php foreach ($figurines as $figurine) :
@@ -24,11 +24,11 @@
                     <div class="card-body">
                         <h5 class="card-title"><?= $figurine->getName() ?></h5>
                         <p class="card-text">Prix : <?= $figurine->getPrice() ?> euro</p>
-                        <a href="<?= URL?>addPanier" class="btn btn-primary">Acheter</a>
+                        <button class="btn btn-secondary mb-3" type="submit">Acheter</button>
                     </div>
             </div>
            <?php endforeach ?>
-        </div>
+                </form>
     </div> 
     </div>
 </container>

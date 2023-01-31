@@ -32,6 +32,7 @@ ob_start()
 
 <?php
 
+
 $content = ob_get_clean();
 $title = "Votre panier";
 require_once "base.html.php";

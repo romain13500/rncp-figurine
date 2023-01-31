@@ -104,6 +104,28 @@ class FigurineManager extends Manager {
         }
     }
 
+    public function addFigurinePanierDB($id) {
+        $req = "SELECT figurine GET id, name, price FROM panier WHERE id = :id";
+        $statement = $this->getBdd()->prepare($req);
+        $statement->bindValue(":id", $id, PDO::PARAM_INT);
+        $result = $statement->execute();
+        $statement->closeCursor();
 
+        if($result) {
+            $figurine = "INSERT INTO panier (id, name, price) FROM figurine WHERE id = :name, :price";
+            $statement = $this->getBdd()->prepare($figurine);
+            $statement->bindValue(":id", $id, PDO::PARAM_INT);
+            $statement->bindValue(":name", $name, PDO::PARAM_STR);
+            $statement->bindValue(":price", $price, PDO::PARAM_INT);
+            $result = $statement->execute();
+            $statement->closeCursor();
 
+            if(!isset($result)) {
+                echo "Erreur";
+            } 
+        }
+    }
 }
+
+
+

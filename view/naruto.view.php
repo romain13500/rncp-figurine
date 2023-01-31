@@ -7,10 +7,10 @@
 <container>
     <div id="drangonball">
     <div class="row">
-        <div class="d-flex flex-wrap my-5 ">
+        <form class="d-flex flex-wrap my-5" method="post" action="<?= URL ?>addPanier">
             
- <!-- BOUCLE SUR LE TABLEAU FIGURINE ET AFFICHER -->
-           <?php foreach ($figurines as $figurine) :
+                <!-- BOUCLE SUR LE TABLEAU FIGURINE ET AFFICHER -->
+        <?php foreach ($figurines as $figurine) :
            
                     if($figurine->getManga() != 3) {
                         continue;
@@ -20,15 +20,17 @@
 
                 <img class="rounded-top w-100" src="<?= $figurine->getImage() ?>" alt="img">
 
-                <hr>
+                    <hr>
                     <div class="card-body">
                         <h5 class="card-title"><?= $figurine->getName() ?></h5>
                         <p class="card-text">Prix : <?= $figurine->getPrice() ?> euro</p>
-                        <a href="<?= URL?>addPanier" class="btn btn-primary">Acheter</a>
+                        <button class=" btn btn-secondary mb-3" type="submit">Acheter</button>
+
                     </div>
+                    
             </div>
-           <?php endforeach ?>
-        </div>
+        <?php endforeach ?>
+        </form>
     </div> 
     </div>
 </container>
