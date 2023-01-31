@@ -79,6 +79,16 @@ class FigurineController {
         <?php
     }
 
+    public function addFigurinePanier($id) {
+        $this->figurineManager->addFigurinePanierDB($id);
+        ?>
+            <script type="text/javascript">
+                            alert('Ajout au panier reussi');
+                            location.href = "<?=URL?>panier";
+            </script>
+        <?php
+    }
+
     
 
     

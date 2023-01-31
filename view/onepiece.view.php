@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><?= $figurine->getName() ?></h5>
                         <p class="card-text">Prix : <?= $figurine->getPrice() ?> euro</p>
-                        <a href="#" class="btn btn-primary">Acheter</a>
+                        <a href="<?= URL?>addPanier" class="btn btn-primary">Acheter</a>
                     </div>
             </div>
            <?php endforeach ?>

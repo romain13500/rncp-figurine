@@ -10,6 +10,9 @@ $userController = new UserController;
 require_once "controller/FigurineController.php";
 $FigurineController = new FigurineController;
 
+require_once "controller/PanierController.php";
+$PanierController = new PanierController;
+
 
 
 if(empty($_GET['page'])){
@@ -46,10 +49,16 @@ if(empty($_GET['page'])){
      // ********************************************************************************************************************
         // *************************** PANIER ************************************************************************
 
-        case 'panier':
-            if(empty($url[1])){; 
-               require_once "view/panier.view.php"; // SI RIEN APRES panier ALORS PAGE panier
+        case 'addPanier':
+            if(isset($_GET['id'])){
+                $FigurineController->addFigurinePanier($_GET['id']);
             }
+
+        case 'panier':
+            if(empty($url[1])){
+               $PanierController->displayPanier();
+            }
+            
 
 
             // ********************************************************************************************************************
@@ -161,6 +170,9 @@ if(empty($_GET['page'])){
             case 'naruto' :
                 if(empty($url[1])){; 
                     $FigurineController->displayFigurineNaruto();
+                }
+                elseif ($url[1] === "addPanier") {
+                    $FigurineController->NewFigurineForm();
                 }
             break;
 

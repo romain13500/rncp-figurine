@@ -35,7 +35,7 @@ input:invalid {
 	left: -2px;
 	top: -2px;
 	background: linear-gradient(45deg, #eb8d0a, #eb8d0a, #eb8d0a,#eb8d0a, #eb8d0a, #eb8d0a, 
-		#eb8d0a, #eb8d0a,#eb8d0a, #eb8d0a) !important;
+		#eb8d0a, #eb8d0a,#eb8d0a, #eb8d0a) ;
 	background-size: 400% !important;
 	width: calc(100% + 4px) !important;
 	height: calc(100% + 4px) !important;
@@ -78,5 +78,16 @@ div .dragonball{
     transform: scale(1.1) !important;
 }
 
-
+#nbPanier{
+	background-color: #ee8132 !important;
+	color: white !important;
+	border-radius: 50% !important;
+	padding: 5px !important;
+	font-size: 20px !important;
+	font-weight: bold !important;
+	position: absolute !important;
+	top: 0 !important;
+	right: 0 !important; 
+	
+}
 

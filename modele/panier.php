@@ -1,15 +1,17 @@
 <?php
 
-class Panier {
+class Paniers {
     private $id;
     private $name;
     private $price;
+    private $quantity;
 
 
-public function __construct($id, $name, $price){
+public function __construct($id, $name, $price, $quantity){
     $this->id = $id;
     $this->name = $name;
     $this->price = $price;
+    $this->quantity = $quantity;
 }
 
     /**
@@ -68,6 +70,26 @@ public function __construct($id, $name, $price){
     public function setPrice($price)
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of quantity
+     */ 
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * Set the value of quantity
+     *
+     * @return  self
+     */ 
+    public function setQuantity($quantity)
+    {
+        $this->quantity = $quantity;
 
         return $this;
     }
