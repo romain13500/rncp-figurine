@@ -50,12 +50,12 @@ if(empty($_GET['page'])){
         // *************************** PANIER ************************************************************************
 
         case 'addPanier':
-            if(!isset($_GET['id'])){
+            if(empty($_GET['id'])){
                 echo "Erreur : aucun identifiant de figurine envoyé<br>";
                 var_dump($_SESSION['panier']);
             }
             else {
-                $FigurineController->addFigurinePanier($_GET['id']);
+                $FigurineController->addFigurinePanier($id);
             }
         break;
 
@@ -167,7 +167,7 @@ if(empty($_GET['page'])){
             break;
 
             case 'onepiece' :
-                if(empty($url[1])){; 
+                if(empty($url[1])){
                     $FigurineController->displayFigurineOnePiece();
                 }
             break;
@@ -176,16 +176,10 @@ if(empty($_GET['page'])){
                 if(empty($url[1])){; 
                     $FigurineController->displayFigurineNaruto();
                 }
-                elseif ($url[1] === "addPanier") {
-                    $FigurineController->NewFigurineForm();
-                }
+
             break;
 
 
+    
     }
-
- 
-
-  
-
 }
